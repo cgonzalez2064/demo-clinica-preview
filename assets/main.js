@@ -46,13 +46,13 @@
       "nav.emergency": "Llamar",
       "hero.eyebrow": "Zona 10 · Consulta externa y especialidades",
       "hero.title": "Su salud, atendida con <em>calma</em> y precisión",
-      "hero.desc": "Once especialidades, laboratorio y ultrasonido en una sola sede de Zona 10. Agende su cita en línea, por teléfono o por WhatsApp.",
+      "hero.desc": "Siete especialidades, laboratorio, ultrasonido y vacunación en una sola sede de Zona 10. Agende su cita en línea, por teléfono o por WhatsApp.",
       "hero.cta1": "Agendar cita",
       "hero.cta2": "Escribir por WhatsApp",
       "hero.status": "Abierto de lunes a sábado",
       "hero.badge1": "Parqueo para pacientes",
       "hero.badge2": "Resultados en línea",
-      "hero.badge3": "Pago con aseguradoras",
+      "hero.badge3": "Aceptamos seguros médicos",
       "quick.emergency": "Llamar a la clínica",
       "quick.whatsapp": "WhatsApp directo",
       "quick.visits": "Horario de atención",
@@ -133,7 +133,7 @@
       "bag8": "Sus preguntas, anotadas",
       "bag9": "Ropa cómoda para el ultrasonido",
       "bag10": "Un acompañante de su confianza, si lo desea",
-      "bag.note": "Si tiene sangrado o dolor intenso, acuda a una emergencia.",
+      "bag.note": "Si tiene sangrado o dolor intenso, acuda al servicio de emergencia más cercano.",
       "bag.progress": "{n} de {total} listos",
       "about.eyebrow": "Quiénes somos",
       "about.title": "Una clínica pensada para su tranquilidad",
@@ -144,7 +144,7 @@
       "about.vision_title": "Nuestro compromiso",
       "about.vision_desc": "Respetar su tiempo y su privacidad, explicar cada indicación con claridad y entregar sus resultados de forma segura.",
       "why.title": "Por qué elegirnos",
-      "why1": "Once especialidades",
+      "why1": "Once servicios en una sede",
       "why2": "Laboratorio propio",
       "why3": "Ultrasonido en sede",
       "why4": "Resultados en línea",
@@ -263,7 +263,7 @@
       "insurance.insurers_title": "Aseguradoras con convenio",
       "insurance.insurers_desc": "Si su póliza es de una de estas aseguradoras, presente su carné en recepción. Le indicaremos el copago o deducible que corresponde.",
       "insurance.missing": "¿No encuentra su aseguradora? Llámenos y lo consultamos.",
-      "banks.title": "Depósitos y transferencias",
+      "banks.title": "Bancos para depósitos",
       "pay.title": "Formas de pago",
       "pay1": "Tarjeta de crédito o débito",
       "pay2": "Cuotas con tarjetas participantes",
@@ -325,7 +325,7 @@
       "form.hp_label": "No completar este campo",
       "form.submit": "Enviar mensaje",
       "form.note": "Usaremos sus datos únicamente para responder a su solicitud. Consulte nuestro <a href=\"privacy-notice.html\">Aviso de Privacidad</a>.",
-      "form.fallback": "¿Prefiere no usar el formulario? Escríbanos por <a href=\"tel:+50200000000\">teléfono</a>, <a href=\"mailto:citas@clinica-lumen.example\">correo</a> o <a href=\"https://wa.me/50200000000\" target=\"_blank\" rel=\"noopener noreferrer\">WhatsApp</a>.",
+      "form.fallback": "¿Prefiere no usar el formulario? Comuníquese por <a href=\"tel:+50200000000\">teléfono</a>, <a href=\"mailto:citas@clinica-lumen.example\">correo</a> o <a href=\"https://wa.me/50200000000\" target=\"_blank\" rel=\"noopener noreferrer\">WhatsApp</a>.",
       "form.status_sending": "Enviando…",
       "form.status_ok": "¡Gracias! Recibimos su mensaje y le contactaremos pronto.",
       "form.status_invalid": "Revise los campos marcados antes de enviar.",
@@ -389,7 +389,7 @@
       "doctors.hours": "Horario",
       "doctors.insurers": "Seguros",
       "doctors.request": "Solicitar en línea",
-      "doctors.wa_msg": "Hola, quisiera una cita con {name} ({specialty}) en Clínica Lumen.",
+      "doctors.wa_msg": "Hola, quisiera una cita con {name} ({specialty}) en {site}.",
       "doctors.results": "{n} médicos",
       "doctors.result1": "1 médico",
       "appt.eyebrow": "Citas",
@@ -435,7 +435,7 @@
       "insck.service_label": "Servicio que necesita",
       "reviews.eyebrow": "Opiniones",
       "reviews.title": "Lo que dicen nuestros pacientes",
-      "reviews.based": "Calificación en Google",
+      "reviews.based": "Calificación promedio (ejemplo)",
       "reviews.cta": "Deje su opinión en Google",
       "reviews.stars_aria": "{n} de 5 estrellas",
       "reviews.count_text": "{n} opiniones",
@@ -567,11 +567,26 @@
       "profile.specialty": "Especialidad",
       "demo.banner": "Sitio de demostración: la clínica, las personas y los datos son ficticios.",
       "demo.banner_cta": "Quiero un sitio así",
-      "demo.form_ok": "Vista previa: así confirmaría el envío. En el sitio real, la solicitud llega al panel de la clínica y a su correo.",
+      "demo.form_ok": "Vista previa: así confirmaría el envío. En el sitio real, la solicitud llega al panel y al correo.",
       "demo.preview_label": "Vista previa",
       "demo.view_aria": "Ver otra versión de la demostración",
       "demo.view_clinic": "Clínica",
-      "demo.view_practice": "Consultorio"
+      "demo.view_practice": "Consultorio",
+      "brand.aria@consultorio": "Dra. Mariela Quintanilla, ir al inicio",
+      "contact.map_aria@consultorio": "Abrir la ubicación del consultorio en Google Maps (se abre en una pestaña nueva)",
+      "contact.vcard_aria@consultorio": "Guardar el contacto del consultorio en su teléfono (archivo vCard)",
+      "contact.map_frame@consultorio": "Mapa de la ubicación del consultorio",
+      "ctabanner.directions@consultorio": "Cómo llegar al consultorio",
+      "nav.doctors@consultorio": "La doctora",
+      "doctors.wa_msg@consultorio": "Hola, quisiera agendar una cita con {name} ({specialty}).",
+      "form.opt_surgery@consultorio": "Ultrasonido 4D/5D",
+      "form.opt_emergency@consultorio": "Control ginecológico",
+      "form.opt_specialist@consultorio": "Consulta ginecológica",
+      "form.opt_lab@consultorio": "Papanicolaou o colposcopía",
+      "form.opt_maternity@consultorio": "Control prenatal",
+      "req.name_label@consultorio": "Nombre de la paciente",
+      "appt.specialty_label@consultorio": "Servicio",
+      "insck.service_label@consultorio": "Servicio"
     },
     en: {
       "meta.title": "Clínica Lumen · Medical specialties in Zone 10",
@@ -606,7 +621,7 @@
       "nav.emergency": "Call",
       "hero.eyebrow": "Zone 10 · Outpatient care and specialties",
       "hero.title": "Your health, cared for with <em>calm</em> and precision",
-      "hero.desc": "Eleven specialties, a laboratory and ultrasound under one roof in Zone 10. Book your appointment online, by phone or on WhatsApp.",
+      "hero.desc": "Seven specialties, a laboratory, ultrasound and vaccination at one location in Zona 10. Book online, by phone or on WhatsApp.",
       "hero.cta1": "Book an appointment",
       "hero.cta2": "Message us on WhatsApp",
       "hero.status": "Open Monday to Saturday",
@@ -693,7 +708,7 @@
       "bag8": "Your questions, written down",
       "bag9": "Comfortable clothes for the ultrasound",
       "bag10": "Someone you trust, if you wish",
-      "bag.note": "If you have bleeding or severe pain, go to an emergency room.",
+      "bag.note": "If you have bleeding or severe pain, go to the nearest emergency department.",
       "bag.progress": "{n} of {total} ready",
       "about.eyebrow": "About us",
       "about.title": "A clinic designed for your peace of mind",
@@ -704,7 +719,7 @@
       "about.vision_title": "Our commitment",
       "about.vision_desc": "To respect your time and your privacy, explain every instruction clearly and deliver your results securely.",
       "why.title": "Why choose us",
-      "why1": "Eleven specialties",
+      "why1": "Eleven services, one location",
       "why2": "On-site laboratory",
       "why3": "On-site ultrasound",
       "why4": "Results online",
@@ -823,7 +838,7 @@
       "insurance.insurers_title": "Partner insurers",
       "insurance.insurers_desc": "If your policy is with one of these insurers, show your card at reception. We will tell you the co-payment or deductible that applies.",
       "insurance.missing": "Can't find your insurer? Call us and we'll check.",
-      "banks.title": "Deposits and transfers",
+      "banks.title": "Banks for deposits",
       "pay.title": "Payment methods",
       "pay1": "Credit or debit card",
       "pay2": "Instalments with participating cards",
@@ -885,7 +900,7 @@
       "form.hp_label": "Leave this field empty",
       "form.submit": "Send message",
       "form.note": "We'll only use your details to answer your request. See our <a href=\"privacy-notice.html\">Privacy Notice</a>.",
-      "form.fallback": "Prefer not to use the form? Reach us by <a href=\"tel:+50200000000\">phone</a>, <a href=\"mailto:citas@clinica-lumen.example\">email</a>, or <a href=\"https://wa.me/50200000000\" target=\"_blank\" rel=\"noopener noreferrer\">WhatsApp</a>.",
+      "form.fallback": "Prefer not to use the form? Contact us by <a href=\"tel:+50200000000\">phone</a>, <a href=\"mailto:citas@clinica-lumen.example\">email</a>, or <a href=\"https://wa.me/50200000000\" target=\"_blank\" rel=\"noopener noreferrer\">WhatsApp</a>.",
       "form.status_sending": "Sending…",
       "form.status_ok": "Thank you! We received your message and will contact you soon.",
       "form.status_invalid": "Please check the highlighted fields before sending.",
@@ -945,11 +960,11 @@
       "doctors.filter_aria": "Filter by specialty",
       "doctors.all": "All",
       "doctors.empty": "No doctors match your search.",
-      "doctors.license": "License no.",
+      "doctors.license": "Licence no.",
       "doctors.hours": "Hours",
       "doctors.insurers": "Insurance",
       "doctors.request": "Request online",
-      "doctors.wa_msg": "Hello, I'd like an appointment with {name} ({specialty}) at Clínica Lumen.",
+      "doctors.wa_msg": "Hello, I'd like an appointment with {name} ({specialty}) at {site}.",
       "doctors.results": "{n} doctors",
       "doctors.result1": "1 doctor",
       "appt.eyebrow": "Appointments",
@@ -980,7 +995,7 @@
       "pkg.pdf": "Download price list (PDF)",
       "comp.title": "",
       "labprep.eyebrow": "Exams",
-      "labprep.title": "How to prepare for your exams",
+      "labprep.title": "How to prepare for your tests",
       "labprep.desc": "Follow these instructions so your results are reliable. If in doubt, call us before you come.",
       "labprep.time": "Results",
       "inshow.title": "",
@@ -995,7 +1010,7 @@
       "insck.service_label": "Service you need",
       "reviews.eyebrow": "Reviews",
       "reviews.title": "What our patients say",
-      "reviews.based": "Google rating",
+      "reviews.based": "Average rating (sample)",
       "reviews.cta": "Leave a review on Google",
       "reviews.stars_aria": "{n} out of 5 stars",
       "reviews.count_text": "{n} reviews",
@@ -1123,15 +1138,30 @@
       "inshow5": "",
       "whatsapp.message": "Hello, I'd like information about an appointment at Clínica Lumen.",
       "brand.tagline": "Medical specialties",
-      "nav.packages": "Check-ups",
+      "nav.packages": "Checkups",
       "profile.specialty": "Specialty",
       "demo.banner": "Demo site: the clinic, people and details are fictional.",
       "demo.banner_cta": "I want a site like this",
-      "demo.form_ok": "Preview: this is how the form confirms a message. On the real site, the request reaches the clinic's panel and inbox.",
+      "demo.form_ok": "Preview: this is how the form confirms a message. On the real site, the request reaches the panel and the inbox.",
       "demo.preview_label": "Preview",
       "demo.view_aria": "See another version of the demo",
       "demo.view_clinic": "Clinic",
-      "demo.view_practice": "Private practice"
+      "demo.view_practice": "Private practice",
+      "brand.aria@consultorio": "Dr. Mariela Quintanilla, go to home",
+      "contact.map_aria@consultorio": "Open the practice's location in Google Maps (opens in a new tab)",
+      "contact.vcard_aria@consultorio": "Save the practice's contact to your phone (vCard file)",
+      "contact.map_frame@consultorio": "Map of the practice's location",
+      "ctabanner.directions@consultorio": "Directions to the practice",
+      "nav.doctors@consultorio": "The doctor",
+      "doctors.wa_msg@consultorio": "Hello, I'd like to book an appointment with {name} ({specialty}).",
+      "form.opt_surgery@consultorio": "4D/5D ultrasound",
+      "form.opt_emergency@consultorio": "Gynaecological checkup",
+      "form.opt_specialist@consultorio": "Gynaecology consultation",
+      "form.opt_lab@consultorio": "Pap smear or colposcopy",
+      "form.opt_maternity@consultorio": "Prenatal care",
+      "req.name_label@consultorio": "Patient's name",
+      "appt.specialty_label@consultorio": "Service",
+      "insck.service_label@consultorio": "Service"
     }
   };
 
@@ -1146,6 +1176,17 @@
       var data = JSON.parse(el.textContent);
       return (data && typeof data === 'object') ? data : {};
     } catch (e) { return {}; }
+  })();
+  /* Profile variants of fixed texts ("key@consultorio"), as the server renders them. */
+  (function(){
+    var m = /(?:^|\s)profile-(\w+)/.exec(root.className);
+    if (!m) return;
+    var suffix = '@' + m[1];
+    ['es', 'en'].forEach(function(lang){
+      Object.keys(I18N[lang]).forEach(function(k){
+        if (k.slice(-suffix.length) === suffix) I18N[lang][k.slice(0, -suffix.length)] = I18N[lang][k];
+      });
+    });
   })();
   /* Only these keys may carry markup (built and escaped server-side). */
   var HTML_OVERRIDE_KEYS = { 'hero.title': true, 'maternity.title': true, 'form.fallback': true };
@@ -1172,7 +1213,7 @@
     return (saved === 'es' || saved === 'en') ? saved : 'es';
   })();
   var WHATSAPP_NUMBER = (typeof SITE_CONTENT.whatsapp === 'string' && /^\d{8,15}$/.test(SITE_CONTENT.whatsapp))
-    ? SITE_CONTENT.whatsapp : (root.getAttribute('data-wa') || '50256302274');
+    ? SITE_CONTENT.whatsapp : (root.getAttribute('data-wa') || '50256192730');
 
   /** Name of the clinic or practice, as published (Perfil del sitio → Nombre). */
   function siteName(){ var el = document.querySelector('.brand-name'); return (el && el.textContent.trim()) || document.title.split(' · ')[0]; }
@@ -1280,6 +1321,12 @@
       returnFocus = from || opener || document.activeElement;
       clearTimeout(closingTimer);
       dialog.classList.remove('is-closing');
+      /* A popover grows from its trigger, wherever banners above the header put it. */
+      if (opener && dialog.classList.contains('sheet-pop')){
+        var r = opener.getBoundingClientRect();
+        dialog.style.setProperty('--pop-top', Math.round(Math.max(r.bottom, 0) + 8) + 'px');
+        dialog.style.setProperty('--pop-right', Math.round(Math.max(window.innerWidth - r.right - 8, 16)) + 'px');
+      }
       if (!dialog.open) dialog.showModal();
       if (opener) opener.setAttribute('aria-expanded', 'true');
       requestAnimationFrame(function(){ dialog.classList.add('is-open'); });
@@ -1446,7 +1493,7 @@
     window.addEventListener('resize', function(){ moveIndicator(current()); });
     langListeners.push(function(){ requestAnimationFrame(function(){ moveIndicator(current()); }); });
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ moveIndicator(current()); });
-    moveIndicator(current());
+    requestAnimationFrame(function(){ moveIndicator(current()); });
   }
 
   /* ---------- Hospital bag checklist, saved only on this device ---------- */
@@ -1678,7 +1725,7 @@
   if (parallaxEls.length){
     window.addEventListener('scroll', function(){ if (!plxTicking){ plxTicking = true; requestAnimationFrame(parallax); } }, { passive: true });
     window.addEventListener('resize', parallax);
-    parallax();
+    requestAnimationFrame(parallax);
   }
 
   /* ---------- Back to top ---------- */
@@ -1692,7 +1739,7 @@
   }
 
   applyLang(currentLang);
-  onScroll();
+  requestAnimationFrame(onScroll);
 
   /* ============================================================
      Contact form — client-side validation (a UX convenience only;
@@ -2158,7 +2205,7 @@
     /* «Pedir cita» by WhatsApp: a message naming the doctor and the specialty. */
     document.querySelectorAll('[data-wa-doc]').forEach(function(a){
       var k = a.getAttribute('data-wa-doc');
-      a.setAttribute('href', waUrl(fmt(t('doctors.wa_msg'), { name: a.getAttribute('data-doc-name') || '', specialty: t(k + '.specialty') === k + '.specialty' ? '' : t(k + '.specialty') })));
+      a.setAttribute('href', waUrl(fmt(t('doctors.wa_msg'), { site: siteName(), name: a.getAttribute('data-doc-name') || '', specialty: t(k + '.specialty') === k + '.specialty' ? '' : t(k + '.specialty') })));
     });
   };
   langListeners.push(applyPieces);

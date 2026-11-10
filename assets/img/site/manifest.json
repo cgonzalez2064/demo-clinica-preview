@@ -1,4 +1,39 @@
 {
+ "c-doctora-consulta": {
+  "h": 600,
+  "src": "consult-room.jpg",
+  "variants": [
+   600,
+   900
+  ],
+  "w": 900
+ },
+ "c-sala-ultrasonido": {
+  "h": 750,
+  "src": "ultrasound.jpg",
+  "variants": [
+   800,
+   1000
+  ],
+  "w": 1000
+ },
+ "c-ultrasonido-alto": {
+  "h": 1125,
+  "src": "ultrasound.jpg",
+  "variants": [
+   480,
+   900
+  ],
+  "w": 900
+ },
+ "c-ultrasonido-equipo": {
+  "h": 400,
+  "src": "ultrasound.jpg",
+  "variants": [
+   600
+  ],
+  "w": 600
+ },
  "doc-f1": {
   "h": 480,
   "src": "doctor-portrait-f-1.jpg",
@@ -166,6 +201,7 @@
   "src": "cardiology.jpg",
   "variants": [
    600,
+   800,
    1000
   ],
   "w": 1000
@@ -175,6 +211,7 @@
   "src": "hands-care.jpg",
   "variants": [
    600,
+   800,
    1000
   ],
   "w": 1000
@@ -184,6 +221,7 @@
   "src": "lab.jpg",
   "variants": [
    600,
+   800,
    1000
   ],
   "w": 1000
@@ -193,6 +231,7 @@
   "src": "consult-room.jpg",
   "variants": [
    600,
+   800,
    1000
   ],
   "w": 1000
@@ -202,6 +241,7 @@
   "src": "hero-2.jpg",
   "variants": [
    600,
+   800,
    1000
   ],
   "w": 1000
@@ -211,6 +251,7 @@
   "src": "pediatrics.jpg",
   "variants": [
    600,
+   800,
    1000
   ],
   "w": 1000
@@ -220,6 +261,7 @@
   "src": "ultrasound.jpg",
   "variants": [
    600,
+   800,
    1000
   ],
   "w": 1000
@@ -229,6 +271,7 @@
   "src": "pharmacy-or-medication.jpg",
   "variants": [
    600,
+   800,
    1000
   ],
   "w": 1000
