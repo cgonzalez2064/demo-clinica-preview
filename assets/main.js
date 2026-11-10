@@ -565,11 +565,11 @@
       "brand.tagline": "Especialidades médicas",
       "nav.packages": "Chequeos",
       "profile.specialty": "Especialidad",
-      "demo.banner": "Sitio de demostración: la clínica, las personas y los datos son ficticios.",
+      "demo.banner": "Demostración con datos ficticios.",
       "demo.banner_cta": "Quiero un sitio así",
       "demo.form_ok": "Vista previa: así confirmaría el envío. En el sitio real, la solicitud llega al panel y al correo.",
       "demo.preview_label": "Vista previa",
-      "demo.view_aria": "Ver otra versión de la demostración",
+      "demo.view_aria": "Ver otro paquete",
       "demo.view_clinic": "Clínica",
       "demo.view_practice": "Consultorio",
       "brand.aria@consultorio": "Dra. Mariela Quintanilla, ir al inicio",
@@ -586,7 +586,8 @@
       "form.opt_maternity@consultorio": "Control prenatal",
       "req.name_label@consultorio": "Nombre de la paciente",
       "appt.specialty_label@consultorio": "Servicio",
-      "insck.service_label@consultorio": "Servicio"
+      "insck.service_label@consultorio": "Servicio",
+      "demo.packages": "← Paquetes"
     },
     en: {
       "meta.title": "Clínica Lumen · Medical specialties in Zone 10",
@@ -1140,11 +1141,11 @@
       "brand.tagline": "Medical specialties",
       "nav.packages": "Checkups",
       "profile.specialty": "Specialty",
-      "demo.banner": "Demo site: the clinic, people and details are fictional.",
+      "demo.banner": "Demo with fictional data.",
       "demo.banner_cta": "I want a site like this",
       "demo.form_ok": "Preview: this is how the form confirms a message. On the real site, the request reaches the panel and the inbox.",
       "demo.preview_label": "Preview",
-      "demo.view_aria": "See another version of the demo",
+      "demo.view_aria": "See another package",
       "demo.view_clinic": "Clinic",
       "demo.view_practice": "Private practice",
       "brand.aria@consultorio": "Dr. Mariela Quintanilla, go to home",
@@ -1161,7 +1162,8 @@
       "form.opt_maternity@consultorio": "Prenatal care",
       "req.name_label@consultorio": "Patient's name",
       "appt.specialty_label@consultorio": "Service",
-      "insck.service_label@consultorio": "Service"
+      "insck.service_label@consultorio": "Service",
+      "demo.packages": "← Packages"
     }
   };
 
@@ -1210,6 +1212,8 @@
   var LANG_KEY = 'clinica_lang';
   var currentLang = (function(){
     var saved = store(LANG_KEY);
+    /* Packages without the English version stay in Spanish, whatever was chosen elsewhere on this domain. */
+    if (root.hasAttribute('data-es-only')) return 'es';
     return (saved === 'es' || saved === 'en') ? saved : 'es';
   })();
   var WHATSAPP_NUMBER = (typeof SITE_CONTENT.whatsapp === 'string' && /^\d{8,15}$/.test(SITE_CONTENT.whatsapp))
@@ -1281,7 +1285,7 @@
       }
       a.setAttribute('href', waUrl(text));
     });
-    store(LANG_KEY, lang);
+    if (!root.hasAttribute('data-es-only')) store(LANG_KEY, lang);
     langListeners.forEach(function(fn){ fn(lang); });
   }
 

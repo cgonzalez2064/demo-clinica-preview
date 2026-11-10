@@ -1079,6 +1079,9 @@ p a:not(.btn):not([class*="pill"]), .form-note a, .form-fallback a, .doc li a { 
 /* Demo banner (shareable preview only, added by tools/build-preview.sh). */
 .demo-banner { position: relative; z-index: 60; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 16px; padding: 9px 16px; background: var(--indigo); color: #fff; font-size: .875rem; line-height: 1.35; text-align: center; }
 .demo-banner p { margin: 0; color: rgba(255, 255, 255, .92); }
+.demo-banner .demo-home { margin-right: 6px; text-decoration: none; }
+.demo-banner .demo-home:hover { text-decoration: underline; }
+.demo-views { max-width: 100%; overflow-x: auto; scrollbar-width: none; }
 .demo-banner a { color: #fff; font-weight: 650; text-underline-offset: 3px; }
 .demo-views { display: inline-flex; padding: 3px; border-radius: 999px; background: rgba(255, 255, 255, .14); }
 .demo-views a { padding: 4px 12px; border-radius: 999px; text-decoration: none; font-weight: 600; color: rgba(255, 255, 255, .86); transition: background-color var(--t) var(--ease), color var(--t) var(--ease); }
