@@ -271,6 +271,22 @@ td.txt { font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums
 .plan-what { margin: 12px 0 0; color: var(--ink-2); font-size: .9375rem; }
 .plan-card .feat { margin: 18px 0 0; }
 
+.billing { position: relative; display: flex; width: fit-content; max-width: 100%; margin: 0 0 22px; padding: 4px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.billing button { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border: 0; border-radius: 999px; background: none; color: var(--ink-2); font: 650 .9375rem/1 var(--font); cursor: pointer; white-space: nowrap; transition: color .3s; }
+@media (max-width: 420px) { .billing button { padding: 0 12px; font-size: .875rem; } }
+.billing button[aria-checked="true"] { color: #fff; }
+.billing em { font-style: normal; white-space: nowrap; padding: 3px 8px; border-radius: 999px; background: #e3f4f0; color: #0f766e; font-size: .75rem; font-weight: 700; }
+.billing .pill { position: absolute; z-index: 0; top: 4px; bottom: 4px; left: 0; width: 0; border-radius: 999px; background: var(--ink); transition: transform .45s var(--ease), width .45s var(--ease); }
+.p-y, .o-y { display: none; }
+.annual .p-m, .annual .o-m { display: none; }
+.annual .p-y { display: flex; } .annual .o-y { display: inline; }
+.offer { display: flex; align-items: flex-start; gap: 10px; margin: 12px 0 0; padding: 10px 12px; border-radius: 14px; background: var(--soft); border: 1px dashed color-mix(in srgb, var(--c) 40%, transparent); font-size: .8125rem; line-height: 1.45; color: var(--ink-2); }
+.offer b { color: var(--ink); }
+.off { flex: none; padding: 2px 8px; border-radius: 999px; background: var(--c); color: #fff; font-size: .75rem; font-weight: 750; }
+.annual .offer { background: linear-gradient(135deg, var(--soft), #fff); border-style: solid; }
+@media (prefers-reduced-motion: no-preference) { .annual .plan-card .price strong { animation: pop .5s var(--ease); } }
+@keyframes pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
 /* Quiz */
 .quiz { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); padding: clamp(18px, 3vw, 28px); border-radius: 28px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
 .quiz fieldset { margin: 0; padding: 0; border: 0; display: grid; gap: 8px; align-content: start; }
@@ -499,30 +515,42 @@ footer .wrap > p { margin: 0; padding-top: 24px; border-top: 1px solid var(--lin
 
   <section id="planes">
     <div class="wrap">
-      <div class="head rv"><p class="kicker">Mantenimiento</p><h2>Planes de mantenimiento mensual.</h2><p class="sub">Mantienen su sitio en línea, protegido y actualizado. Los primeros 3 meses están incluidos en todos los paquetes; a partir del cuarto mes, usted elige el plan.</p></div>
-      <ul class="plan-grid">
+      <div class="head rv"><p class="kicker">Mantenimiento</p><h2>Planes de mantenimiento.</h2><p class="sub">Mantienen su sitio en línea, protegido y actualizado. Los primeros 3 meses están incluidos en todos los paquetes; a partir del cuarto mes, usted elige el plan y la forma de pago, mensual o anual con descuento.</p></div>
+      <div class="billing rv" role="radiogroup" aria-label="Forma de pago del mantenimiento" id="billing">
+        <span class="pill" aria-hidden="true"></span>
+        <button type="button" role="radio" aria-checked="true" data-b="m">Mensual</button>
+        <button type="button" role="radio" aria-checked="false" data-b="y">Anual de contado <em>hasta -20%</em></button>
+      </div>
+      <ul class="plan-grid" id="planGrid">
         <li class="plan-card rv">
           <p class="plan-for">Para Express y Starter</p>
           <h3>Cuidado</h3>
-          <p class="price"><strong>Q450</strong> <span class="vat">/ mes + IVA</span></p>
+          <p class="price p-m"><strong>Q450</strong> <span class="vat">/ mes + IVA</span></p>
+          <p class="price p-y"><strong>Q4,860</strong> <span class="vat">/ año + IVA</span></p>
+          <p class="offer"><span class="off">-10%</span><span class="o-m">Pago anual de contado: <b>Q4,860 + IVA</b>, ahorro de Q540.</span><span class="o-y">Equivale a Q405 al mes. Ahorro de <b>Q540</b> frente al pago mensual.</span></p>
           <p class="plan-what">Para sitios con pocas actualizaciones. Nos encargamos de su disponibilidad, seguridad y respaldos.</p>
           <ul class="feat"><li>Hosting y dominio renovados</li><li>Certificado de seguridad SSL</li><li>Respaldos diarios y monitoreo</li><li>1 hora mensual de cambios</li></ul>
         </li>
         <li class="plan-card featured rv">
           <p class="plan-for">Para Profesional</p>
           <h3>Gestión</h3>
-          <p class="price"><strong>Q850</strong> <span class="vat">/ mes + IVA</span></p>
+          <p class="price p-m"><strong>Q850</strong> <span class="vat">/ mes + IVA</span></p>
+          <p class="price p-y"><strong>Q8,670</strong> <span class="vat">/ año + IVA</span></p>
+          <p class="offer"><span class="off">-15%</span><span class="o-m">Pago anual de contado: <b>Q8,670 + IVA</b>, ahorro de Q1,530.</span><span class="o-y">Equivale a Q722.50 al mes. Ahorro de <b>Q1,530</b> frente al pago mensual.</span></p>
           <p class="plan-what">Para clínicas que actualizan horarios, médicos o promociones con frecuencia y desean medir resultados.</p>
           <ul class="feat"><li class="plus">Todo lo de Cuidado, más:</li><li>2 horas mensuales de cambios</li><li>Informe mensual de visitas y solicitudes</li></ul>
         </li>
         <li class="plan-card rv">
           <p class="plan-for">Para Premium</p>
           <h3>Evolución</h3>
-          <p class="price"><strong>Q1,200</strong> <span class="vat">/ mes + IVA</span></p>
+          <p class="price p-m"><strong>Q1,200</strong> <span class="vat">/ mes + IVA</span></p>
+          <p class="price p-y"><strong>Q11,520</strong> <span class="vat">/ año + IVA</span></p>
+          <p class="offer"><span class="off">-20%</span><span class="o-m">Pago anual de contado: <b>Q11,520 + IVA</b>, ahorro de Q2,880.</span><span class="o-y">Equivale a Q960 al mes. Ahorro de <b>Q2,880</b> frente al pago mensual.</span></p>
           <p class="plan-what">Para centros médicos que buscan mejorar su posicionamiento en Google y contar con atención prioritaria.</p>
           <ul class="feat"><li class="plus">Todo lo de Gestión, más:</li><li>3 horas mensuales de cambios</li><li>Optimización continua de posicionamiento en Google</li><li>Atención prioritaria</li></ul>
         </li>
       </ul>
+      <p class="note">El descuento aplica al pagar 12 meses por adelantado. Mientras más completo el plan, mayor el descuento: 10% en Cuidado, 15% en Gestión y 20% en Evolución.</p>
     </div>
   </section>
 
@@ -554,6 +582,7 @@ footer .wrap > p { margin: 0; padding-top: 24px; border-top: 1px solid var(--lin
         <details><summary>¿Qué necesito entregar para empezar?</summary><p>Su logotipo (si lo tiene), los servicios que ofrece, sus datos de contacto y, de preferencia, fotografías propias de sus instalaciones y de su equipo. Si no cuenta con textos, nosotros los redactamos. El plazo de entrega inicia al recibir este material.</p></details>
         <details><summary>¿Qué es una «sección»?</summary><p>Cada bloque de contenido del sitio: portada, servicios, perfil del médico, opiniones y contacto, entre otros. A más secciones, más información puede presentar sobre su clínica.</p></details>
         <details><summary>¿Qué sucede después de los 3 meses incluidos?</summary><p>Usted elige un plan de mantenimiento para que el sitio continúe en línea, con respaldos y horas de cambios incluidas. Si no requiere cambios frecuentes, el plan Cuidado es suficiente.</p></details>
+        <details><summary>¿Hay descuento si pago el mantenimiento por año?</summary><p>Sí. Al pagar 12 meses por adelantado obtiene 10% de descuento en Cuidado (Q4,860 + IVA al año), 15% en Gestión (Q8,670 + IVA) y 20% en Evolución (Q11,520 + IVA).</p></details>
         <details><summary>¿Puedo cambiar de paquete más adelante?</summary><p>Sí. Puede iniciar con un paquete básico y agregar secciones o funciones más adelante; solo se cotiza la diferencia.</p></details>
         <details><summary>¿Puedo administrar el contenido yo mismo?</summary><p>Sí, con nuestra plataforma administrable: un panel en español para actualizar textos, fotografías y horarios, que se cotiza según sus necesidades. Si prefiere delegarlo, los cambios están incluidos en su plan de mantenimiento.</p></details>
       </div>
@@ -641,6 +670,18 @@ footer .wrap > p { margin: 0; padding-top: 24px; border-top: 1px solid var(--lin
   addEventListener('resize', function () { movePill(current()); });
   function boot() { load(current().dataset.k); }
   if (document.readyState === 'complete') boot(); else addEventListener('load', boot);
+
+  /* Maintenance billing: monthly or annual with discount. */
+  var bill = document.getElementById('billing'), grid = document.getElementById('planGrid');
+  var bpill = bill.querySelector('.pill'), bbtn = [].slice.call(bill.querySelectorAll('button'));
+  function setBill(b) {
+    bbtn.forEach(function (x) { x.setAttribute('aria-checked', x === b ? 'true' : 'false'); });
+    bpill.style.width = b.offsetWidth + 'px'; bpill.style.transform = 'translateX(' + b.offsetLeft + 'px)';
+    grid.classList.toggle('annual', b.dataset.b === 'y');
+  }
+  bbtn.forEach(function (b) { b.addEventListener('click', function () { setBill(b); }); });
+  requestAnimationFrame(function () { setBill(bbtn[0]); });
+  addEventListener('resize', function () { setBill(bill.querySelector('[aria-checked=true]')); });
 
   /* Quiz. */
   var f = document.getElementById('quiz'), out = document.getElementById('answer');
