@@ -565,8 +565,8 @@
       "brand.tagline": "Especialidades médicas",
       "nav.packages": "Chequeos",
       "profile.specialty": "Especialidad",
-      "demo.banner": "Demostración con datos ficticios.",
-      "demo.banner_cta": "Quiero un sitio así",
+      "demo.banner": "Datos ficticios.",
+      "demo.banner_cta": "Cotizar este paquete",
       "demo.form_ok": "Vista previa: así confirmaría el envío. En el sitio real, la solicitud llega al panel y al correo.",
       "demo.preview_label": "Vista previa",
       "demo.view_aria": "Ver otro paquete",
@@ -587,7 +587,11 @@
       "req.name_label@consultorio": "Nombre de la paciente",
       "appt.specialty_label@consultorio": "Servicio",
       "insck.service_label@consultorio": "Servicio",
-      "demo.packages": "← Paquetes"
+      "demo.packages": "← Paquetes",
+      "demo.sum_express": "Express · Q4,800 + IVA · entrega en 1 semana",
+      "demo.sum_starter": "Starter · Q6,800 + IVA · entrega en 2 semanas",
+      "demo.sum_profesional": "Profesional · Q10,500 + IVA · entrega en 3 semanas",
+      "demo.sum_premium": "Premium · desde Q19,500 + IVA · entrega en 4 a 6 semanas"
     },
     en: {
       "meta.title": "Clínica Lumen · Medical specialties in Zone 10",
@@ -985,7 +989,7 @@
       "req.phone_label": "Phone",
       "req.email_label": "Email",
       "req.notes_label": "Comments",
-      "req.health_notice": "For your privacy, please don't include diagnoses, test results or other clinical details — only what we need to handle your request.",
+      "req.health_notice": "For your privacy, please don't include diagnoses, test results or other clinical details, only what we need to handle your request.",
       "pkg.eyebrow": "Packages",
       "pkg.title": "Checkups and reference prices",
       "pkg.desc": "See the approximate cost of our most requested checkups in advance.",
@@ -1141,8 +1145,8 @@
       "brand.tagline": "Medical specialties",
       "nav.packages": "Checkups",
       "profile.specialty": "Specialty",
-      "demo.banner": "Demo with fictional data.",
-      "demo.banner_cta": "I want a site like this",
+      "demo.banner": "Fictional data.",
+      "demo.banner_cta": "Get a quote for this package",
       "demo.form_ok": "Preview: this is how the form confirms a message. On the real site, the request reaches the panel and the inbox.",
       "demo.preview_label": "Preview",
       "demo.view_aria": "See another package",
@@ -1163,7 +1167,11 @@
       "req.name_label@consultorio": "Patient's name",
       "appt.specialty_label@consultorio": "Service",
       "insck.service_label@consultorio": "Service",
-      "demo.packages": "← Packages"
+      "demo.packages": "← Packages",
+      "demo.sum_express": "Express · Q4,800 + VAT · delivered in 1 week",
+      "demo.sum_starter": "Starter · Q6,800 + VAT · delivered in 2 weeks",
+      "demo.sum_profesional": "Profesional · Q10,500 + VAT · delivered in 3 weeks",
+      "demo.sum_premium": "Premium · from Q19,500 + VAT · delivered in 4 to 6 weeks"
     }
   };
 
@@ -1239,7 +1247,12 @@
   }
   function okKey(k){ return PREVIEW ? 'demo.form_ok' : (k || 'form.status_ok'); }
   function fmt(s, vars){ return String(s).replace(/\{(\w+)\}/g, function(m, k){ return vars[k] !== undefined ? vars[k] : m; }); }
-  function waUrl(text){ return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text); }
+  /* Shareable preview: messages say which package the visitor was looking at. */
+  var PKG = (root.className.match(/\bpkg-(\w+)/) || [])[1] || '';
+  function waUrl(text){
+    if (PREVIEW && PKG) text = '[Demo ' + PKG.charAt(0).toUpperCase() + PKG.slice(1) + '] ' + text;
+    return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
+  }
 
   var langToggle = document.getElementById('langToggle');
   var langListeners = [];

@@ -15,6 +15,8 @@
    ============================================================ */
 (function () {
   'use strict';
+  var script = document.currentScript;
+  var endpoint = script && script.src ? new URL('../api/collect', script.src).href : '/api/collect';
   try {
     var nav = window.navigator || {};
     if (typeof nav.sendBeacon !== 'function') return;
@@ -28,7 +30,7 @@
   function send(data) {
     try {
       data.page = page;
-      navigator.sendBeacon('/api/collect', new Blob([JSON.stringify(data)], { type: 'application/json' }));
+      navigator.sendBeacon(endpoint, new Blob([JSON.stringify(data)], { type: 'application/json' }));
     } catch (e) { /* never interfere with the page */ }
   }
 

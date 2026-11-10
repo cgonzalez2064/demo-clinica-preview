@@ -1116,3 +1116,128 @@ h1, h2, h3 { color: var(--ink, #0b3b47); }
 }
 @media (min-width: 860px) { .how-steps:has(> li:nth-child(4):last-child) { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1100px) { .how-steps:has(> li:nth-child(4):last-child) { grid-template-columns: repeat(4, 1fr); } }
+
+/* ==========================================================================
+   Palettes (panel: Diseño del sitio → Paleta) — one family, four moods.
+   Brisa (sky), Salvia (emerald), Lumen (teal, the default above) and
+   Medianoche (navy with a champagne accent). Text tones keep WCAG AA.
+   ========================================================================== */
+html.pal-brisa {
+  --indigo: #0b3a5c; --indigo-strong: #082b45; --royal: #0369a1; --plum: #0267a0; --lilac: #7dd3fc; --sky: #0369a1;
+  --bg: #f5f8fb; --bg-tint: #eaf2f9; --surface-2: #f0f5fa; --text: #0f1f2e; --text-2: #3a4d5e; --muted: #586b7c;
+  --link: var(--indigo); --accent: #0369a1; --focus: #0369a1; --tile-bg: #e0eefa; --tile-fg: #0369a1; --footer-bg: #edf3f9;
+  --cta-bg: linear-gradient(135deg, #e3f1fb 0%, #e8f0fb 55%, #eef3fb 100%);
+  --grad-brand: linear-gradient(135deg, #0369a1 0%, #075985 52%, #0b3a5c 100%);
+  --grad-wing: linear-gradient(120deg, #38bdf8 0%, #0ea5e9 38%, #0369a1 72%, #1d4ed8 100%);
+  --grad-text: linear-gradient(120deg, #0284c7 0%, #0369a1 50%, #1d4ed8 100%);
+  --grad-soft: linear-gradient(160deg, #e9f3fb 0%, #eef3fa 50%, #f3f6fa 100%);
+}
+html.pal-salvia {
+  --indigo: #0f4a3a; --indigo-strong: #0b382c; --royal: #047857; --plum: #05715a; --lilac: #6ee7b7; --sky: #0f766e;
+  --bg: #f6f8f6; --bg-tint: #ebf4ef; --surface-2: #f1f6f3; --text: #10241d; --text-2: #3c5249; --muted: #5a6e66;
+  --link: var(--indigo); --accent: #047857; --focus: #047857; --tile-bg: #e1f4ea; --tile-fg: #047857; --footer-bg: #edf5f0;
+  --cta-bg: linear-gradient(135deg, #e3f5ec 0%, #e6f3ee 55%, #eef6f2 100%);
+  --grad-brand: linear-gradient(135deg, #059669 0%, #047857 52%, #0f4a3a 100%);
+  --grad-wing: linear-gradient(120deg, #6ee7b7 0%, #10b981 38%, #047857 72%, #0f766e 100%);
+  --grad-text: linear-gradient(120deg, #059669 0%, #047857 50%, #0f766e 100%);
+  --grad-soft: linear-gradient(160deg, #eaf6ef 0%, #eef6f2 50%, #f3f7f4 100%);
+}
+html.pal-medianoche {
+  --indigo: #16233f; --indigo-strong: #0e1830; --royal: #2c4370; --plum: #8a6a35; --lilac: #d8bd85; --sky: #2c4370;
+  --gold: #b08d57; --gold-soft: #f3ead9;
+  --bg: #f8f7f4; --bg-tint: #f1eee7; --surface-2: #f5f3ee; --text: #141b2b; --text-2: #3e4658; --muted: #5d6474;
+  --line: rgba(20, 27, 43, .09); --line-strong: rgba(20, 27, 43, .16);
+  --link: var(--indigo); --accent: #1c2c4f; --focus: #8a6a35; --tile-bg: #f1ebdf; --tile-fg: #7a5c2c; --footer-bg: #f2efe8;
+  --cta-bg: linear-gradient(135deg, #f4efe4 0%, #eef0f5 55%, #f3f1ec 100%);
+  --shadow-md: 0 10px 28px -10px rgba(14, 24, 48, .2), 0 2px 6px rgba(14, 24, 48, .05);
+  --shadow-lg: 0 34px 70px -24px rgba(14, 24, 48, .38), 0 10px 24px -12px rgba(14, 24, 48, .18);
+  --grad-brand: linear-gradient(135deg, #2c4370 0%, #1c2c4f 52%, #16233f 100%);
+  --grad-wing: linear-gradient(120deg, #e3c88f 0%, #b08d57 40%, #2c4370 75%, #16233f 100%);
+  --grad-text: linear-gradient(120deg, #1c2c4f 0%, #3a5486 45%, #a07c45 100%);
+  --grad-soft: linear-gradient(160deg, #f6f1e7 0%, #f1f1f4 50%, #f7f5f0 100%);
+}
+html.pal-brisa .orb-a { background: radial-gradient(circle, #c4e4f8 0%, transparent 65%); }
+html.pal-brisa .orb-b, html.pal-brisa .orb-c { background: radial-gradient(circle, #d6e6fb 0%, transparent 65%); }
+html.pal-salvia .orb-a { background: radial-gradient(circle, #c3eedb 0%, transparent 65%); }
+html.pal-salvia .orb-b, html.pal-salvia .orb-c { background: radial-gradient(circle, #d4efe5 0%, transparent 65%); }
+html.pal-medianoche .orb-a { background: radial-gradient(circle, #efe2c6 0%, transparent 65%); }
+html.pal-medianoche .orb-b { background: radial-gradient(circle, #d9e0ee 0%, transparent 65%); }
+html.pal-medianoche .orb-c { background: radial-gradient(circle, #f1e8d6 0%, transparent 65%); }
+html.pal-brisa .btn-primary { box-shadow: 0 8px 20px -8px rgba(3, 105, 161, .5); }
+html.pal-salvia .btn-primary { box-shadow: 0 8px 20px -8px rgba(4, 120, 87, .5); }
+html.pal-medianoche .btn-primary { background: var(--grad-brand); box-shadow: 0 10px 24px -10px rgba(14, 24, 48, .55), inset 0 1px 0 rgba(255, 255, 255, .14); }
+
+/* ==========================================================================
+   Package finish: the smaller packages are clean and direct; each step up
+   adds depth and motion, and Premium adds a refined, editorial finish.
+   ========================================================================== */
+/* Express: one calm page. One photo, no quick tiles, an even services grid. */
+html.pkg-express .hero-photo.p2, html.pkg-express .hero-photo.p3, html.pkg-express .quick { display: none; }
+@media (min-width: 900px) { html.pkg-express .hero-photo.p1 { width: 82%; right: 4%; top: 6%; } }
+html.pkg-express .hero-bg .orb-b, html.pkg-express .hero-bg .orb-c { display: none; }
+/* Express and Starter: every service card the same size. */
+html.pkg-express .service-card[data-service="service1"], html.pkg-starter .service-card[data-service="service1"] { background: var(--surface); border-color: var(--line); }
+html.pkg-express .service-card[data-service="service1"] h3, html.pkg-starter .service-card[data-service="service1"] h3 { font-size: inherit; }
+@media (min-width: 620px) {
+  html.pkg-express .service-card:first-child, html.pkg-starter .service-card:first-child { grid-column: auto; flex-direction: column; }
+  html.pkg-express .service-card:first-child .service-media, html.pkg-starter .service-card:first-child .service-media { flex: none; aspect-ratio: 16 / 10; min-height: 0; }
+  html.pkg-express .service-card[data-service="service1"] .service-body, html.pkg-starter .service-card[data-service="service1"] .service-body { padding: 20px 22px 22px; }
+}
+
+/* Premium: more air, a champagne hairline, refined eyebrows and a richer hero. */
+html.pkg-premium .section { padding: 96px 0; }
+@media (max-width: 619px) { html.pkg-premium .section { padding: 72px 0; } }
+html.pkg-premium .section-head h2 { letter-spacing: -.028em; }
+html.pkg-premium .eyebrow { display: inline-flex; align-items: center; gap: 10px; letter-spacing: .12em; }
+html.pkg-premium .eyebrow::before { content: ""; width: 22px; height: 1px; background: currentColor; opacity: .7; }
+html.pkg-premium .hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.6rem); letter-spacing: -.035em; line-height: 1.02; }
+html.pkg-premium .site-header.is-scrolled { box-shadow: 0 1px 0 color-mix(in srgb, var(--plum) 28%, transparent), 0 10px 30px -18px rgba(14, 24, 48, .35); }
+html.pkg-premium .service-card, html.pkg-premium .review-card, html.pkg-premium .pkg-card { transition: transform var(--t) var(--ease), box-shadow var(--t) var(--ease), border-color var(--t) var(--ease); }
+html.pkg-premium .service-card:hover, html.pkg-premium .review-card:hover { border-color: color-mix(in srgb, var(--plum) 38%, var(--line)); box-shadow: var(--shadow-lg); }
+html.pkg-premium .hero-photo { border-color: color-mix(in srgb, var(--plum) 18%, var(--surface)); }
+html.pkg-premium .status-chip { border-color: color-mix(in srgb, var(--plum) 30%, var(--glass-edge)); }
+html.pkg-premium .quick-tile a { border: 1px solid color-mix(in srgb, var(--plum) 16%, var(--line)); }
+html.pkg-premium .cta-band .cta-inner { background: var(--grad-brand); color: #fff; }
+html.pkg-premium .cta-band .cta-inner h2, html.pkg-premium .cta-band .cta-inner p, html.pkg-premium .cta-band .cta-dir-label { color: #fff; }
+html.pkg-premium .cta-band .btn-primary { background: #fff; color: var(--indigo); }
+@media (prefers-reduced-motion: reduce) { html.pkg-premium .service-card:hover, html.pkg-premium .review-card:hover { box-shadow: var(--shadow-md); } }
+
+/* Demo banner: the package, its price and delivery time; the quote button. */
+.demo-banner { background: var(--grad-brand); }
+.demo-banner .demo-sum { font-weight: 650; color: #fff; }
+.demo-banner .demo-note { color: rgba(255, 255, 255, .72); }
+.demo-banner a.demo-cta { display: inline-flex; align-items: center; min-height: 32px; padding: 0 14px; border-radius: 999px; background: #fff; color: var(--indigo); text-decoration: none; font-weight: 650; box-shadow: 0 6px 16px -8px rgba(0, 0, 0, .45); transition: transform var(--t-fast) var(--ease), box-shadow var(--t) var(--ease); }
+.demo-banner a.demo-cta:hover { box-shadow: 0 10px 22px -10px rgba(0, 0, 0, .55); }
+.demo-banner a.demo-cta:active { transform: scale(.96); }
+.demo-views a[aria-current] { color: var(--indigo); }
+
+/* ---------- Motion by package ----------
+   Express and Starter: a plain, quick fade. Profesional: the materialize
+   reveal above. Premium: adds a light sweep on the headline, photos that
+   breathe, a hairline that draws under each eyebrow and a sheen on buttons.
+   Reduced motion turns all of it off. */
+@media (prefers-reduced-motion: no-preference) {
+  html.pkg-express.js-reveal .reveal, html.pkg-starter.js-reveal .reveal { filter: none; transform: translateY(10px); transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out); }
+  html.pkg-express.js-reveal .reveal.in, html.pkg-starter.js-reveal .reveal.in { transform: none; }
+
+  html.pkg-premium .hero h1 em { background-size: 220% 100%; animation: lumen-sweep 2.4s var(--ease-out) .5s both; }
+  @keyframes lumen-sweep { from { background-position: 100% 0; } to { background-position: 0 0; } }
+  html.pkg-premium .hero-photo.p1 img { animation: lumen-breathe 18s ease-in-out 1.2s infinite alternate; }
+  @keyframes lumen-breathe { from { transform: scale(1); } to { transform: scale(1.06); } }
+  html.pkg-premium .eyebrow::before { transform-origin: left; transform: scaleX(0); transition: transform 900ms var(--ease-out) 200ms; }
+  html.pkg-premium .reveal.in .eyebrow::before, html.pkg-premium .hero .eyebrow::before, html:not(.js-reveal).pkg-premium .eyebrow::before { transform: scaleX(1); }
+  html.pkg-premium .btn-primary, html.pkg-premium .btn-emergency { position: relative; overflow: hidden; isolation: isolate; }
+  html.pkg-premium .btn-primary::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, .28) 50%, transparent 70%); transform: translateX(-120%); transition: transform 900ms var(--ease-out); }
+  html.pkg-premium .btn-primary:hover::after { transform: translateX(120%); }
+  html.pkg-premium .service-card:hover .service-photo { transform: scale(1.04); }
+  html.pkg-premium .service-photo { transition: transform 1.2s var(--ease-out); }
+}
+
+/* Palette inks: headings and the logo mark follow the palette. */
+html.pal-brisa { --ink: #0b3a5c; }
+html.pal-salvia { --ink: #0f4a3a; }
+html.pal-medianoche { --ink: #16233f; }
+html.pal-brisa #lg-s stop:nth-child(1) { stop-color: #38bdf8; } html.pal-brisa #lg-s stop:nth-child(2) { stop-color: #0284c7; } html.pal-brisa #lg-s stop:nth-child(3) { stop-color: #0b3a5c; }
+html.pal-salvia #lg-s stop:nth-child(1) { stop-color: #34d399; } html.pal-salvia #lg-s stop:nth-child(2) { stop-color: #059669; } html.pal-salvia #lg-s stop:nth-child(3) { stop-color: #0f4a3a; }
+html.pal-medianoche #lg-s stop:nth-child(1) { stop-color: #e3c88f; } html.pal-medianoche #lg-s stop:nth-child(2) { stop-color: #2c4370; } html.pal-medianoche #lg-s stop:nth-child(3) { stop-color: #16233f; }
+html.pkg-premium .eyebrow { display: flex; width: fit-content; }

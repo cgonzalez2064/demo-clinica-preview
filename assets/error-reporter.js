@@ -10,6 +10,8 @@
    ============================================================ */
 (function () {
   'use strict';
+  var script = document.currentScript;
+  var endpoint = script && script.src ? new URL('../api/telemetry/error', script.src).href : '/api/telemetry/error';
   if (!window.navigator || typeof window.navigator.sendBeacon !== 'function') return;
   var sent = 0;
   var seen = {};
@@ -26,7 +28,7 @@
         location: String(where || '').slice(0, 200),
         page: window.location.pathname
       });
-      navigator.sendBeacon('/api/telemetry/error', new Blob([body], { type: 'application/json' }));
+      navigator.sendBeacon(endpoint, new Blob([body], { type: 'application/json' }));
     } catch (e) { /* never interfere with the page */ }
   }
   window.addEventListener('error', function (e) {
