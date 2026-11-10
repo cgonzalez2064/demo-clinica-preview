@@ -566,8 +566,8 @@
       "nav.packages": "Chequeos",
       "profile.specialty": "Especialidad",
       "demo.banner": "Datos ficticios.",
-      "demo.banner_cta": "Cotizar este paquete",
-      "demo.form_ok": "Vista previa: así confirmaría el envío. En el sitio real, la solicitud llega al panel y al correo.",
+      "demo.banner_cta": "Solicitar cotización",
+      "demo.form_ok": "Vista previa: así se confirma el envío. En el sitio en producción, la solicitud se registra en el panel y se notifica por correo.",
       "demo.preview_label": "Vista previa",
       "demo.view_aria": "Ver otro paquete",
       "demo.view_clinic": "Clínica",
@@ -587,11 +587,11 @@
       "req.name_label@consultorio": "Nombre de la paciente",
       "appt.specialty_label@consultorio": "Servicio",
       "insck.service_label@consultorio": "Servicio",
-      "demo.packages": "← Paquetes",
-      "demo.sum_express": "Express · Q4,800 + IVA · entrega en 2 semanas",
-      "demo.sum_starter": "Starter · Q6,800 + IVA · entrega en 3 semanas",
-      "demo.sum_profesional": "Profesional · Q10,500 + IVA · entrega en 4 a 5 semanas",
-      "demo.sum_premium": "Premium · desde Q19,500 + IVA · entrega en 6 a 8 semanas"
+      "demo.packages": "← Ver paquetes",
+      "demo.sum_express": "Express · Q4,800 + IVA · plazo: 2 semanas",
+      "demo.sum_starter": "Starter · Q6,800 + IVA · plazo: 3 semanas",
+      "demo.sum_profesional": "Profesional · Q10,500 + IVA · plazo: 4 a 5 semanas",
+      "demo.sum_premium": "Premium · desde Q19,500 + IVA · plazo: 6 a 8 semanas"
     },
     en: {
       "meta.title": "Clínica Lumen · Medical specialties in Zone 10",
@@ -1146,7 +1146,7 @@
       "nav.packages": "Checkups",
       "profile.specialty": "Specialty",
       "demo.banner": "Fictional data.",
-      "demo.banner_cta": "Get a quote for this package",
+      "demo.banner_cta": "Request a quote",
       "demo.form_ok": "Preview: this is how the form confirms a message. On the real site, the request reaches the panel and the inbox.",
       "demo.preview_label": "Preview",
       "demo.view_aria": "See another package",
@@ -1167,11 +1167,11 @@
       "req.name_label@consultorio": "Patient's name",
       "appt.specialty_label@consultorio": "Service",
       "insck.service_label@consultorio": "Service",
-      "demo.packages": "← Packages",
-      "demo.sum_express": "Express · Q4,800 + VAT · delivered in 2 weeks",
-      "demo.sum_starter": "Starter · Q6,800 + VAT · delivered in 3 weeks",
-      "demo.sum_profesional": "Profesional · Q10,500 + VAT · delivered in 4 to 5 weeks",
-      "demo.sum_premium": "Premium · from Q19,500 + VAT · delivered in 6 to 8 weeks"
+      "demo.packages": "← All packages",
+      "demo.sum_express": "Express · Q4,800 + VAT · lead time: 2 weeks",
+      "demo.sum_starter": "Starter · Q6,800 + VAT · lead time: 3 weeks",
+      "demo.sum_profesional": "Profesional · Q10,500 + VAT · lead time: 4 to 5 weeks",
+      "demo.sum_premium": "Premium · from Q19,500 + VAT · lead time: 6 to 8 weeks"
     }
   };
 
