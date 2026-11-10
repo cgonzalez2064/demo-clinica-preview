@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="es-GT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sitios web para clínicas · Demostración</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Demostración de sitios web para clínicas y consultorios médicos en los cuatro paquetes de TeraDevs.">
+<meta name="theme-color" content="#16233f">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+:root {
+  --ink: #111a2b; --ink-2: #3c4658; --muted: #5d6676; --bg: #f7f8fa; --surface: #fff;
+  --line: rgba(17, 26, 43, .09); --line-2: rgba(17, 26, 43, .14);
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI Variable Text", "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI Variable Display", "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  /* One family, four moods (the same palettes the sites use). */
+  --express: #0369a1; --express-soft: #e3f0fa; --express-grad: linear-gradient(135deg, #38bdf8, #0369a1);
+  --starter: #047857; --starter-soft: #e2f4ea; --starter-grad: linear-gradient(135deg, #34d399, #047857);
+  --profesional: #0f766e; --profesional-soft: #e2f3ef; --profesional-grad: linear-gradient(135deg, #2dd4bf, #0e7490);
+  --premium: #1c2c4f; --premium-soft: #f2ebdd; --premium-grad: linear-gradient(135deg, #2c4370, #16233f); --gold: #a07c45;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 100%/1.55 var(--font); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; }
+.glow { position: absolute; inset: 0 0 auto; height: 720px; pointer-events: none; overflow: hidden; z-index: 0; }
+.glow span { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .55; }
+.glow .g1 { width: 520px; height: 520px; left: -160px; top: -220px; background: #bfe3f7; }
+.glow .g2 { width: 460px; height: 460px; right: -140px; top: -120px; background: #f1e3c8; }
+.glow .g3 { width: 380px; height: 380px; left: 38%; top: 120px; background: #c8efe3; }
+@media (prefers-reduced-motion: no-preference) {
+  .glow .g1 { animation: drift 22s ease-in-out infinite alternate; }
+  .glow .g2 { animation: drift 26s ease-in-out -6s infinite alternate-reverse; }
+  .glow .g3 { animation: drift 30s ease-in-out -12s infinite alternate; }
+}
+@keyframes drift { to { transform: translate(60px, 40px) scale(1.08); } }
+.wrap { position: relative; z-index: 1; max-width: 1160px; margin: 0 auto; padding: clamp(44px, 8vw, 96px) 16px 64px; }
+.eyebrow { margin: 0 0 14px; font-size: .8125rem; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+h1 { margin: 0; font-family: var(--display); font-size: clamp(2.2rem, 5.6vw, 3.8rem); line-height: 1.04; letter-spacing: -.035em; font-weight: 750; text-wrap: balance; max-width: 17ch; }
+h1 em { font-style: normal; background: linear-gradient(110deg, #0369a1 0%, #047857 34%, #0e7490 62%, #a07c45 100%); -webkit-background-clip: text; background-clip: text; color: transparent; background-size: 200% 100%; }
+@media (prefers-reduced-motion: no-preference) { h1 em { animation: sweep 2.6s var(--ease) .3s both; } }
+@keyframes sweep { from { background-position: 100% 0; } to { background-position: 0 0; } }
+.lead { margin: 18px 0 0; max-width: 60ch; font-size: clamp(1.02rem, 1.6vw, 1.16rem); color: var(--ink-2); text-wrap: pretty; }
+.grid { list-style: none; margin: clamp(36px, 6vw, 60px) 0 0; padding: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); align-items: stretch; }
+.tier { --c: var(--express); --soft: var(--express-soft); --grad: var(--express-grad);
+  position: relative; display: flex; flex-direction: column; padding: 0 0 22px; border-radius: 24px; background: var(--surface); border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(17, 26, 43, .05), 0 12px 32px -18px rgba(17, 26, 43, .25); overflow: hidden;
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease); }
+.tier.starter { --c: var(--starter); --soft: var(--starter-soft); --grad: var(--starter-grad); }
+.tier.profesional { --c: var(--profesional); --soft: var(--profesional-soft); --grad: var(--profesional-grad); }
+.tier.premium { --c: var(--premium); --soft: var(--premium-soft); --grad: var(--premium-grad); border-color: rgba(160, 124, 69, .45); }
+@media (prefers-reduced-motion: no-preference) {
+  .tier { opacity: 0; transform: translateY(18px) scale(.985); animation: rise .8s var(--ease) forwards; }
+  .tier:nth-child(2) { animation-delay: 70ms; } .tier:nth-child(3) { animation-delay: 140ms; } .tier:nth-child(4) { animation-delay: 210ms; }
+  .tier:hover { transform: translateY(-6px); box-shadow: 0 2px 4px rgba(17, 26, 43, .05), 0 30px 60px -26px color-mix(in srgb, var(--c) 55%, transparent); border-color: color-mix(in srgb, var(--c) 40%, var(--line)); }
+  .tier:active { transform: scale(.985); transition-duration: .1s; }
+}
+@keyframes rise { to { opacity: 1; transform: none; } }
+.band { position: relative; height: 104px; background: var(--grad); overflow: hidden; }
+.band::before { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 90% at 85% 0%, rgba(255, 255, 255, .35), transparent 60%); }
+.band::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, .25) 50%, transparent 65%); transform: translateX(-120%); transition: transform 1.1s var(--ease); }
+.tier:hover .band::after { transform: translateX(120%); }
+.premium .band { background: var(--premium-grad); }
+.premium .band::before { background: radial-gradient(90% 120% at 90% -10%, rgba(227, 200, 143, .55), transparent 55%); }
+.band .palette { position: absolute; left: 22px; bottom: 14px; display: flex; gap: 6px; }
+.band .palette i { width: 14px; height: 14px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, .85); }
+.band .label { position: absolute; left: 22px; top: 16px; font-size: .75rem; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .9); }
+.badge { position: absolute; right: 16px; bottom: 12px; padding: 4px 10px; border-radius: 999px; background: rgba(255, 255, 255, .92); color: var(--c); font-size: .75rem; font-weight: 700; }
+.premium .badge { color: var(--gold); }
+.body { padding: 20px 22px 0; display: flex; flex-direction: column; flex: 1; }
+.tier h2 { margin: 0; font-family: var(--display); font-size: 1.5rem; letter-spacing: -.02em; }
+.price { margin: 6px 0 0; color: var(--muted); font-size: .9375rem; }
+.price strong { font-family: var(--display); font-size: 1.6rem; letter-spacing: -.02em; color: var(--ink); font-variant-numeric: tabular-nums; }
+.price .vat { font-weight: 600; color: var(--ink-2); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; list-style: none; }
+.meta li { padding: 4px 10px; border-radius: 999px; background: var(--soft); color: var(--c); font-size: .8125rem; font-weight: 650; }
+.premium .meta li { color: #7a5c2c; }
+.for { margin: 14px 0 0; font-weight: 600; }
+.feat { list-style: none; margin: 12px 0 22px; padding: 0; display: grid; gap: 8px; font-size: .9375rem; color: var(--ink-2); }
+.feat li { display: flex; gap: 10px; }
+.feat li::before { content: ""; flex: none; width: 18px; height: 18px; margin-top: 3px; border-radius: 50%; background: var(--c); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Ccircle cx='9' cy='9' r='9'/%3E%3C/svg%3E"); opacity: .14; position: relative; }
+.feat li { position: relative; }
+.feat li::after { content: ""; position: absolute; left: 5px; top: 9px; width: 7px; height: 4px; border-left: 2px solid var(--c); border-bottom: 2px solid var(--c); transform: rotate(-45deg); }
+.premium .feat li::after { border-color: var(--gold); }
+.feat li.plus { font-weight: 600; color: var(--ink); }
+.actions { margin-top: auto; display: grid; gap: 8px; }
+.go { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 18px; border-radius: 999px; background: var(--grad); color: #fff; font-weight: 650; text-decoration: none; overflow: hidden; box-shadow: 0 10px 22px -12px color-mix(in srgb, var(--c) 80%, transparent); }
+.go svg { width: 16px; height: 16px; transition: transform .4s var(--ease); }
+.go:hover svg { transform: translateX(3px); }
+.go:focus-visible, .wa:focus-visible { outline: 3px solid var(--c); outline-offset: 3px; }
+.wa { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--ink); font-weight: 600; font-size: .9375rem; text-decoration: none; transition: border-color .3s, background-color .3s; }
+.wa:hover { border-color: var(--c); background: var(--soft); }
+.wa svg { width: 18px; height: 18px; color: #1faa59; }
+h3 { margin: clamp(56px, 8vw, 88px) 0 6px; font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: -.025em; }
+.sub { margin: 0 0 22px; color: var(--muted); }
+.table-wrap { overflow-x: auto; border-radius: 22px; border: 1px solid var(--line); background: var(--surface); box-shadow: 0 12px 32px -22px rgba(17, 26, 43, .3); -webkit-overflow-scrolling: touch; }
+table { width: 100%; min-width: 680px; border-collapse: collapse; font-size: .9375rem; }
+th, td { padding: 13px 14px; text-align: center; border-bottom: 1px solid var(--line); }
+tbody tr:last-child td, tbody tr:last-child th { border-bottom: 0; }
+thead th { position: sticky; top: 0; background: var(--surface); font-family: var(--display); font-size: 1rem; }
+thead th span { display: block; margin-top: 2px; font: 600 .8125rem/1.3 var(--font); color: var(--muted); }
+thead th.express { color: var(--express); } thead th.starter { color: var(--starter); } thead th.profesional { color: var(--profesional); } thead th.premium { color: var(--premium); }
+thead th.premium span { color: var(--gold); }
+tbody th { text-align: left; font-weight: 600; color: var(--ink-2); position: sticky; left: 0; background: var(--surface); }
+tbody tr:hover td, tbody tr:hover th { background: #fafbfc; }
+.y, .n { display: inline-block; width: 22px; height: 22px; border-radius: 50%; vertical-align: middle; position: relative; }
+.y { background: var(--c); }
+.y::after { content: ""; position: absolute; left: 7px; top: 5px; width: 6px; height: 10px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.n::after { content: ""; position: absolute; left: 6px; right: 6px; top: 10px; height: 2px; border-radius: 2px; background: rgba(17, 26, 43, .2); }
+td.express { --c: var(--express); } td.starter { --c: var(--starter); } td.profesional { --c: var(--profesional); } td.premium { --c: var(--gold); }
+td.txt { font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+.foot { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--line); font-size: .9375rem; color: var(--muted); }
+.foot p { margin: 0; max-width: 70ch; }
+.foot a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 650; text-decoration: none; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.cta-main, .cta-alt { display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border-radius: 999px; font-weight: 650; text-decoration: none; transition: transform .2s var(--ease), box-shadow .3s var(--ease), background-color .3s; }
+.cta-main { background: var(--ink); color: #fff; box-shadow: 0 12px 26px -14px rgba(17, 26, 43, .6); }
+.cta-alt { border: 1px solid var(--line-2); background: rgba(255, 255, 255, .7); backdrop-filter: blur(12px); }
+.cta-main:active, .cta-alt:active { transform: scale(.97); }
+.trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 22px 0 0; padding: 0; font-size: .875rem; color: var(--ink-2); }
+.trust li { display: flex; align-items: center; gap: 8px; }
+.trust li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #0f766e; }
+.year { margin: -6px 0 16px; font-size: .8125rem; color: var(--muted); line-height: 1.45; }
+.year strong { color: var(--ink); font-size: .875rem; }
+.tier.profesional { box-shadow: 0 0 0 2px color-mix(in srgb, var(--profesional) 55%, transparent), 0 24px 48px -26px rgba(15, 118, 110, .55); }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+.plan { margin: 0 0 14px; padding: 10px 12px; border-radius: 14px; background: var(--soft); font-size: .875rem; color: var(--ink-2); }
+.plan strong { color: var(--c); }
+.premium .plan strong { color: #7a5c2c; }
+.plan-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.plan-card { --c: #0f766e; position: relative; padding: 24px 22px; border-radius: 22px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 10px 28px -20px rgba(17, 26, 43, .3); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+.plan-card.featured { border-color: rgba(15, 118, 110, .4); box-shadow: 0 18px 40px -24px rgba(15, 118, 110, .55); }
+@media (prefers-reduced-motion: no-preference) { .plan-card:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -26px rgba(17, 26, 43, .4); } }
+.plan-card h4 { margin: 2px 0 0; font-family: var(--display); font-size: 1.35rem; letter-spacing: -.02em; }
+.plan-for { margin: 0; font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--c); }
+.plan-what { margin: 10px 0 0; color: var(--ink-2); font-size: .9375rem; }
+.plan-card .feat { margin-bottom: 0; }
+.quiz { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); padding: 22px; border-radius: 22px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 10px 28px -20px rgba(17, 26, 43, .3); }
+.quiz fieldset { margin: 0; padding: 0; border: 0; display: grid; gap: 8px; }
+.quiz legend { margin-bottom: 8px; font-weight: 650; }
+.quiz label { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 14px; border-radius: 14px; border: 1px solid var(--line-2); cursor: pointer; transition: border-color .25s, background-color .25s; }
+.quiz label:has(input:checked) { border-color: #0f766e; background: #eef7f5; }
+.quiz input { accent-color: #0f766e; width: 18px; height: 18px; }
+.answer { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; padding: 16px 18px; border-radius: 16px; background: var(--ink); color: #fff; }
+.answer p { margin: 0; flex: 1 1 280px; }
+.answer a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; background: #fff; color: var(--ink); font-weight: 650; text-decoration: none; }
+.answer a.alt { background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, .4); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 56px; cursor: pointer; font-weight: 600; list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-size: 1.4rem; font-weight: 400; color: var(--muted); transition: transform .35s var(--ease); }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { margin: 0 0 18px; max-width: 70ch; color: var(--ink-2); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .tier, .tier:hover { animation: none; transform: none; opacity: 1; } .band::after { display: none; } }
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"><span class="g1"></span><span class="g2"></span><span class="g3"></span></div>
+<main class="wrap">
+  <p class="eyebrow">Demostración · Sitios web para clínicas y consultorios</p>
+  <h1>Un sitio a la medida de <em>cada etapa</em> de su clínica.</h1>
+  <p class="lead">Vea el mismo sitio en los cuatro paquetes. Cada uno tiene su propia paleta de colores y agrega secciones, funciones y acabados. Todos son rápidos, se adaptan al celular y reciben solicitudes por formulario y WhatsApp. La clínica, las personas y los datos de esta demostración son ficticios.</p>
+  <div class="hero-cta">
+    <a class="cta-main" href="#helpTitle">Ayúdeme a elegir</a>
+    <a class="cta-alt" href="https://wa.me/50256192730?text=Hola%2C%20vi%20la%20demostraci%C3%B3n%20de%20sitios%20web%20para%20cl%C3%ADnicas%20y%20quisiera%20orientaci%C3%B3n%20para%20elegir%20un%20paquete." target="_blank" rel="noopener noreferrer">Hablar con un asesor por WhatsApp</a>
+  </div>
+  <ul class="trust" aria-label="Condiciones">
+    <li>Los mismos precios publicados en teradevsgt.com</li><li>Pago 50% al iniciar y 50% al aprobar</li><li>Dominio y hosting el primer año</li><li>3 meses de plan de cuidado incluidos</li>
+  </ul>
+
+  <ul class="grid">
+    <li class="tier express">
+      <div class="band"><span class="label">Paleta Brisa</span><span class="palette" aria-hidden="true"><i style="background:#38bdf8"></i><i style="background:#0369a1"></i><i style="background:#0b3a5c"></i></span></div>
+      <div class="body">
+        <h2>Express</h2>
+        <p class="price"><strong>Q4,800</strong> <span class="vat">+ IVA</span></p>
+        <ul class="meta"><li>Entrega en 1 semana</li><li>3 secciones</li></ul>
+        <p class="for">Para el médico que empieza en línea</p>
+        <ul class="feat"><li>Una página: portada, servicios y contacto</li><li>Formulario y botón de WhatsApp</li><li>Diseño adaptado al celular</li></ul>
+        <p class="plan">Plan de cuidado sugerido: <strong>Cuidado</strong> · Q450/mes + IVA</p>
+        <p class="year">Total del primer año: <strong>Q8,850 + IVA</strong><br><span>Sitio + 9 meses del plan Cuidado (los primeros 3 ya están incluidos).</span></p>
+        <div class="actions">
+          <a class="go" href="express/">Ver Express <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="wa" href="https://wa.me/50256192730?text=Hola%2C%20vi%20la%20demostraci%C3%B3n%20del%20paquete%20Express%20%28Q4%2C800%20%2B%20IVA%29%20para%20cl%C3%ADnicas%20y%20quisiera%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg>Cotizar Express</a>
+        </div>
+      </div>
+    </li>
+    <li class="tier starter">
+      <div class="band"><span class="label">Paleta Salvia</span><span class="palette" aria-hidden="true"><i style="background:#34d399"></i><i style="background:#047857"></i><i style="background:#0f4a3a"></i></span></div>
+      <div class="body">
+        <h2>Starter</h2>
+        <p class="price"><strong>Q6,800</strong> <span class="vat">+ IVA</span></p>
+        <ul class="meta"><li>Entrega en 2 semanas</li><li>5 secciones</li></ul>
+        <p class="for">Para el consultorio de un médico</p>
+        <ul class="feat"><li class="plus">Todo lo de Express, más:</li><li>Perfil del médico con colegiado y horario</li><li>Opiniones de pacientes</li><li>Estadísticas de visitas</li></ul>
+        <p class="plan">Plan de cuidado sugerido: <strong>Cuidado</strong> · Q450/mes + IVA</p>
+        <p class="year">Total del primer año: <strong>Q10,850 + IVA</strong><br><span>Sitio + 9 meses del plan Cuidado (los primeros 3 ya están incluidos).</span></p>
+        <div class="actions">
+          <a class="go" href="starter/">Ver Starter <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="wa" href="https://wa.me/50256192730?text=Hola%2C%20vi%20la%20demostraci%C3%B3n%20del%20paquete%20Starter%20%28Q6%2C800%20%2B%20IVA%29%20para%20cl%C3%ADnicas%20y%20quisiera%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg>Cotizar Starter</a>
+        </div>
+      </div>
+    </li>
+    <li class="tier profesional">
+      <div class="band"><span class="label">Paleta Lumen</span><span class="badge">Recomendado</span><span class="palette" aria-hidden="true"><i style="background:#2dd4bf"></i><i style="background:#0f766e"></i><i style="background:#0b4a57"></i></span></div>
+      <div class="body">
+        <h2>Profesional</h2>
+        <p class="price"><strong>Q10,500</strong> <span class="vat">+ IVA</span></p>
+        <ul class="meta"><li>Entrega en 3 semanas</li><li>8 secciones</li></ul>
+        <p class="for">Para una clínica con varios médicos</p>
+        <ul class="feat"><li class="plus">Todo lo de Starter, más:</li><li>Directorio de médicos con buscador</li><li>Formulario de citas en línea</li><li>Seguros, formas de pago y nosotros</li><li>Animaciones al desplazarse</li></ul>
+        <p class="plan">Plan de cuidado sugerido: <strong>Gestión</strong> · Q850/mes + IVA</p>
+        <p class="year">Total del primer año: <strong>Q18,150 + IVA</strong><br><span>Sitio + 9 meses del plan Gestión (los primeros 3 ya están incluidos).</span></p>
+        <div class="actions">
+          <a class="go" href="profesional/">Ver Profesional <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="wa" href="https://wa.me/50256192730?text=Hola%2C%20vi%20la%20demostraci%C3%B3n%20del%20paquete%20Profesional%20%28Q10%2C500%20%2B%20IVA%29%20para%20cl%C3%ADnicas%20y%20quisiera%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg>Cotizar Profesional</a>
+        </div>
+      </div>
+    </li>
+    <li class="tier premium">
+      <div class="band"><span class="label">Paleta Medianoche</span><span class="badge">Más completo</span><span class="palette" aria-hidden="true"><i style="background:#e3c88f"></i><i style="background:#2c4370"></i><i style="background:#16233f"></i></span></div>
+      <div class="body">
+        <h2>Premium</h2>
+        <p class="price">Desde <strong>Q19,500</strong> <span class="vat">+ IVA</span></p>
+        <ul class="meta"><li>Entrega en 4 a 6 semanas</li><li>Sitio completo</li></ul>
+        <p class="for">Para un centro médico completo</p>
+        <ul class="feat"><li class="plus">Todo lo de Profesional, más:</li><li>Una página por servicio</li><li>Versión en inglés</li><li>Paquetes de chequeo, exámenes y verificación de seguro</li><li>Acabado editorial y efectos más elaborados</li></ul>
+        <p class="plan">Plan de cuidado sugerido: <strong>Evolución</strong> · Q1,200/mes + IVA</p>
+        <p class="year">Total del primer año: <strong>desde Q30,300 + IVA</strong><br><span>Sitio + 9 meses del plan Evolución (los primeros 3 ya están incluidos).</span></p>
+        <div class="actions">
+          <a class="go" href="premium/">Ver Premium <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="wa" href="https://wa.me/50256192730?text=Hola%2C%20vi%20la%20demostraci%C3%B3n%20del%20paquete%20Premium%20%28desde%20Q19%2C500%20%2B%20IVA%29%20para%20cl%C3%ADnicas%20y%20quisiera%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg>Cotizar Premium</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <h3>Compare los paquetes</h3>
+  <p class="sub">Lo que incluye cada versión de la demostración.</p>
+  <div class="table-wrap" role="region" aria-label="Comparación de paquetes" tabindex="0">
+    <table>
+      <thead><tr><th scope="col"><span class="visually-hidden">Función</span></th>
+        <th scope="col" class="express">Express<span>Q4,800 + IVA</span></th>
+        <th scope="col" class="starter">Starter<span>Q6,800 + IVA</span></th>
+        <th scope="col" class="profesional">Profesional<span>Q10,500 + IVA</span></th>
+        <th scope="col" class="premium">Premium<span>desde Q19,500 + IVA</span></th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Entrega estimada</th><td class="txt">1 semana</td><td class="txt">2 semanas</td><td class="txt">3 semanas</td><td class="txt">4 a 6 semanas</td></tr>
+        <tr><th scope="row">Secciones</th><td class="txt">3</td><td class="txt">5</td><td class="txt">8</td><td class="txt">Sin límite</td></tr>
+        <tr><th scope="row">Portada, servicios y contacto</th><td class="express"><i class="y" aria-label="Sí"></i></td><td class="starter"><i class="y" aria-label="Sí"></i></td><td class="profesional"><i class="y" aria-label="Sí"></i></td><td class="premium"><i class="y" aria-label="Sí"></i></td></tr>
+        <tr><th scope="row">Formulario y WhatsApp</th><td class="express"><i class="y" aria-label="Sí"></i></td><td class="starter"><i class="y" aria-label="Sí"></i></td><td class="profesional"><i class="y" aria-label="Sí"></i></td><td class="premium"><i class="y" aria-label="Sí"></i></td></tr>
+        <tr><th scope="row">Perfil del médico u opiniones</th><td class="express"><i class="n" aria-label="No"></i></td><td class="starter"><i class="y" aria-label="Sí"></i></td><td class="profesional"><i class="y" aria-label="Sí"></i></td><td class="premium"><i class="y" aria-label="Sí"></i></td></tr>
+        <tr><th scope="row">Directorio de médicos</th><td class="express"><i class="n" aria-label="No"></i></td><td class="starter"><i class="n" aria-label="No"></i></td><td class="profesional"><i class="y" aria-label="Sí"></i></td><td class="premium"><i class="y" aria-label="Sí"></i></td></tr>
+        <tr><th scope="row">Citas en línea</th><td class="express"><i class="n" aria-label="No"></i></td><td class="starter"><i class="n" aria-label="No"></i></td><td class="profesional"><i class="y" aria-label="Sí"></i></td><td class="premium"><i class="y" aria-label="Sí"></i></td></tr>
+        <tr><th scope="row">Seguros y formas de pago</th><td class="express"><i class="n" aria-label="No"></i></td><td class="starter"><i class="n" aria-label="No"></i></td><td class="profesional"><i class="y" aria-label="Sí"></i></td><td class="premium"><i class="y" aria-label="Sí"></i></td></tr>
+        <tr><th scope="row">Página propia por servicio</th><td class="express"><i class="n" aria-label="No"></i></td><td class="starter"><i class="n" aria-label="No"></i></td><td class="profesional"><i class="n" aria-label="No"></i></td><td class="premium"><i class="y" aria-label="Sí"></i></td></tr>
+        <tr><th scope="row">Versión en inglés</th><td class="express"><i class="n" aria-label="No"></i></td><td class="starter"><i class="n" aria-label="No"></i></td><td class="profesional"><i class="n" aria-label="No"></i></td><td class="premium"><i class="y" aria-label="Sí"></i></td></tr>
+        <tr><th scope="row">Paquetes, exámenes y verificación de seguro</th><td class="express"><i class="n" aria-label="No"></i></td><td class="starter"><i class="n" aria-label="No"></i></td><td class="profesional"><i class="n" aria-label="No"></i></td><td class="premium"><i class="y" aria-label="Sí"></i></td></tr>
+        <tr><th scope="row">Plan de cuidado sugerido</th><td class="txt">Cuidado</td><td class="txt">Cuidado</td><td class="txt">Gestión</td><td class="txt">Evolución</td></tr>
+        <tr><th scope="row">Animaciones</th><td class="txt">Sencillas</td><td class="txt">Sencillas</td><td class="txt">Fluidas</td><td class="txt">Elaboradas</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <section class="plans" aria-labelledby="plansTitle">
+    <h3 id="plansTitle">Planes de cuidado: su sitio, siempre al día</h3>
+    <p class="sub">Después de publicar, un plan mensual mantiene el sitio en línea, seguro y actualizado. Los primeros 3 meses están incluidos en cualquier paquete; después, usted elige el plan.</p>
+    <ul class="plan-grid">
+      <li class="plan-card">
+        <p class="plan-for">Recomendado para Express y Starter</p>
+        <h4>Cuidado</h4>
+        <p class="price"><strong>Q450</strong> <span class="vat">/ mes + IVA</span></p>
+        <p class="plan-what">Para un sitio que cambia poco. Nos encargamos de que siempre esté disponible y protegido.</p>
+        <ul class="feat"><li>Hosting y dominio renovados</li><li>Candado de seguridad (SSL)</li><li>Respaldos diarios y monitoreo</li><li>1 hora de cambios al mes</li></ul>
+      </li>
+      <li class="plan-card featured">
+        <p class="plan-for">Recomendado para Profesional</p>
+        <h4>Gestión</h4>
+        <p class="price"><strong>Q850</strong> <span class="vat">/ mes + IVA</span></p>
+        <p class="plan-what">Para una clínica que actualiza horarios, médicos o promociones cada mes y quiere saber cómo le va.</p>
+        <ul class="feat"><li class="plus">Todo lo de Cuidado, más:</li><li>2 horas de cambios al mes</li><li>Reporte mensual de visitas y solicitudes</li></ul>
+      </li>
+      <li class="plan-card">
+        <p class="plan-for">Recomendado para Premium</p>
+        <h4>Evolución</h4>
+        <p class="price"><strong>Q1,200</strong> <span class="vat">/ mes + IVA</span></p>
+        <p class="plan-what">Para un centro médico que quiere seguir creciendo en Google y recibir atención prioritaria.</p>
+        <ul class="feat"><li class="plus">Todo lo de Gestión, más:</li><li>3 horas de cambios al mes</li><li>Mejoras de posicionamiento en Google (SEO ligero)</li><li>Atención con prioridad</li></ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="helper" aria-labelledby="helpTitle">
+    <h3 id="helpTitle">¿No sabe cuál elegir?</h3>
+    <p class="sub">Responda dos preguntas y le sugerimos un paquete. Es solo una guía: con gusto lo orientamos sin compromiso.</p>
+    <form class="quiz" id="quiz">
+      <fieldset><legend>¿Cuántos médicos atienden?</legend>
+        <label><input type="radio" name="docs" value="1" checked> Un médico</label>
+        <label><input type="radio" name="docs" value="n"> Varios médicos</label>
+      </fieldset>
+      <fieldset><legend>¿Qué necesita su sitio?</legend>
+        <label><input type="radio" name="need" value="basic" checked> Que me encuentren y me escriban</label>
+        <label><input type="radio" name="need" value="more"> Además, mostrar opiniones y mi perfil</label>
+        <label><input type="radio" name="need" value="full"> Citas en línea, varios servicios con detalle o inglés</label>
+      </fieldset>
+      <output class="answer" id="answer" for="quiz" aria-live="polite"></output>
+    </form>
+  </section>
+
+  <section class="faq" aria-labelledby="faqTitle">
+    <h3 id="faqTitle">Preguntas frecuentes, sin tecnicismos</h3>
+    <details><summary>¿Qué es el dominio y el hosting?</summary><p>El dominio es la dirección de su sitio (por ejemplo, suclinica.com). El hosting es el servidor donde vive el sitio para que cualquiera lo pueda abrir. Ambos están incluidos el primer año.</p></details>
+    <details><summary>¿Qué significa «+ IVA»?</summary><p>Los precios se muestran antes del impuesto. Al facturar se agrega el IVA. El pago del sitio es 50% para iniciar y 50% contra su aprobación.</p></details>
+    <details><summary>¿Qué necesito entregar para empezar?</summary><p>Su logotipo (si tiene), los servicios que ofrece, sus datos de contacto y, de preferencia, fotos propias del consultorio y del equipo. Si no tiene textos, le ayudamos a redactarlos. El tiempo de entrega empieza cuando recibimos este material.</p></details>
+    <details><summary>¿Qué es una «sección»?</summary><p>Cada bloque de la página: la portada, los servicios, el perfil del médico, las opiniones, el contacto. Más secciones permiten contar más sobre su clínica.</p></details>
+    <details><summary>¿Qué pasa después de los 3 meses incluidos?</summary><p>Elige un plan de cuidado para que el sitio siga en línea, con respaldos y cambios incluidos. Si no necesita cambios frecuentes, el plan Cuidado es suficiente.</p></details>
+    <details><summary>¿Puedo cambiar de paquete más adelante?</summary><p>Sí. Puede empezar con un paquete sencillo y agregar secciones o funciones después; solo se cotiza la diferencia de trabajo.</p></details>
+    <details><summary>¿Puedo editar el sitio yo mismo?</summary><p>Sí, con nuestra plataforma administrable: un panel en español para cambiar textos, fotos y horarios. Se cotiza según su caso. Si prefiere no hacerlo, los cambios están incluidos en su plan de cuidado.</p></details>
+  </section>
+
+  <div class="foot">
+    <p>Precios publicados por TeraDevs, más IVA. Todos incluyen dominio y hosting el primer año, SEO básico y 3 meses de plan de cuidado. Los tiempos de entrega son estimados y empiezan cuando se reciben los textos y fotos.</p>
+    <a href="https://wa.me/50256192730?text=Hola%2C%20vi%20la%20demostraci%C3%B3n%20de%20sitios%20web%20para%20cl%C3%ADnicas%20y%20quisiera%20orientaci%C3%B3n%20para%20elegir%20un%20paquete." target="_blank" rel="noopener noreferrer">Quiero un sitio así</a>
+  </div>
+</main>
+<script>
+(function () {
+  var f = document.getElementById('quiz'), out = document.getElementById('answer');
+  var WA = {"express": "https://wa.me/50256192730?text=Hola%2C%20vi%20la%20demostraci%C3%B3n%20del%20paquete%20Express%20%28Q4%2C800%20%2B%20IVA%29%20para%20cl%C3%ADnicas%20y%20quisiera%20una%20cotizaci%C3%B3n.", "starter": "https://wa.me/50256192730?text=Hola%2C%20vi%20la%20demostraci%C3%B3n%20del%20paquete%20Starter%20%28Q6%2C800%20%2B%20IVA%29%20para%20cl%C3%ADnicas%20y%20quisiera%20una%20cotizaci%C3%B3n.", "profesional": "https://wa.me/50256192730?text=Hola%2C%20vi%20la%20demostraci%C3%B3n%20del%20paquete%20Profesional%20%28Q10%2C500%20%2B%20IVA%29%20para%20cl%C3%ADnicas%20y%20quisiera%20una%20cotizaci%C3%B3n.", "premium": "https://wa.me/50256192730?text=Hola%2C%20vi%20la%20demostraci%C3%B3n%20del%20paquete%20Premium%20%28desde%20Q19%2C500%20%2B%20IVA%29%20para%20cl%C3%ADnicas%20y%20quisiera%20una%20cotizaci%C3%B3n."};
+  var info = { express: ['Express', 'Q4,800 + IVA', 'Cuidado'], starter: ['Starter', 'Q6,800 + IVA', 'Cuidado'], profesional: ['Profesional', 'Q10,500 + IVA', 'Gestión'], premium: ['Premium', 'desde Q19,500 + IVA', 'Evolución'] };
+  function pick() {
+    var docs = f.docs.value, need = f.need.value;
+    var k = need === 'full' ? (docs === 'n' ? 'premium' : 'profesional') : docs === 'n' ? 'profesional' : need === 'more' ? 'starter' : 'express';
+    var i = info[k];
+    out.innerHTML = '';
+    var p = document.createElement('p');
+    p.innerHTML = 'Le sugerimos <strong>' + i[0] + '</strong> (' + i[1] + ') con el plan de cuidado <strong>' + i[2] + '</strong>.';
+    var a = document.createElement('a'); a.href = k + '/'; a.textContent = 'Ver ' + i[0];
+    var b = document.createElement('a'); b.className = 'alt'; b.href = WA[k]; b.target = '_blank'; b.rel = 'noopener noreferrer'; b.textContent = 'Pedir orientación por WhatsApp';
+    out.append(p, a, b);
+  }
+  f.addEventListener('change', pick); pick();
+})();
+</script>
+</body>
+</html>
