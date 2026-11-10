@@ -1,4 +1,4 @@
-# Clínica Lumen — vista previa / preview
+# Clínica Lumen · vista previa / preview
 
 Static, shareable preview of the TeraDevs demo clinic website (fictional clinic, fictional people and data).
 

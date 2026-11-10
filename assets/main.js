@@ -588,10 +588,10 @@
       "appt.specialty_label@consultorio": "Servicio",
       "insck.service_label@consultorio": "Servicio",
       "demo.packages": "← Paquetes",
-      "demo.sum_express": "Express · Q4,800 + IVA · entrega en 1 semana",
-      "demo.sum_starter": "Starter · Q6,800 + IVA · entrega en 2 semanas",
-      "demo.sum_profesional": "Profesional · Q10,500 + IVA · entrega en 3 semanas",
-      "demo.sum_premium": "Premium · desde Q19,500 + IVA · entrega en 4 a 6 semanas"
+      "demo.sum_express": "Express · Q4,800 + IVA · entrega en 2 semanas",
+      "demo.sum_starter": "Starter · Q6,800 + IVA · entrega en 3 semanas",
+      "demo.sum_profesional": "Profesional · Q10,500 + IVA · entrega en 4 a 5 semanas",
+      "demo.sum_premium": "Premium · desde Q19,500 + IVA · entrega en 6 a 8 semanas"
     },
     en: {
       "meta.title": "Clínica Lumen · Medical specialties in Zone 10",
@@ -1168,10 +1168,10 @@
       "appt.specialty_label@consultorio": "Service",
       "insck.service_label@consultorio": "Service",
       "demo.packages": "← Packages",
-      "demo.sum_express": "Express · Q4,800 + VAT · delivered in 1 week",
-      "demo.sum_starter": "Starter · Q6,800 + VAT · delivered in 2 weeks",
-      "demo.sum_profesional": "Profesional · Q10,500 + VAT · delivered in 3 weeks",
-      "demo.sum_premium": "Premium · from Q19,500 + VAT · delivered in 4 to 6 weeks"
+      "demo.sum_express": "Express · Q4,800 + VAT · delivered in 2 weeks",
+      "demo.sum_starter": "Starter · Q6,800 + VAT · delivered in 3 weeks",
+      "demo.sum_profesional": "Profesional · Q10,500 + VAT · delivered in 4 to 5 weeks",
+      "demo.sum_premium": "Premium · from Q19,500 + VAT · delivered in 6 to 8 weeks"
     }
   };
 
@@ -1324,6 +1324,17 @@
     if (backToTop) backToTop.classList.toggle('show', sy > 900);
   }
   window.addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+
+  /* ---------- Cards: a soft light follows the pointer (mouse only) ---------- */
+  if (window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches){
+    document.addEventListener('pointermove', function(e){
+      var c = e.target.closest && e.target.closest('.service-card, .mv-card, .ins-card, .review-card, .stat, .doctor-card, .pkg-card');
+      if (!c) return;
+      var r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    }, { passive: true });
+  }
 
   /* ---------- Sheets (native <dialog>): menu, accessibility, gallery ----------
      A <dialog> opened with showModal() already traps focus, makes the page

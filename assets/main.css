@@ -1241,3 +1241,86 @@ html.pal-brisa #lg-s stop:nth-child(1) { stop-color: #38bdf8; } html.pal-brisa #
 html.pal-salvia #lg-s stop:nth-child(1) { stop-color: #34d399; } html.pal-salvia #lg-s stop:nth-child(2) { stop-color: #059669; } html.pal-salvia #lg-s stop:nth-child(3) { stop-color: #0f4a3a; }
 html.pal-medianoche #lg-s stop:nth-child(1) { stop-color: #e3c88f; } html.pal-medianoche #lg-s stop:nth-child(2) { stop-color: #2c4370; } html.pal-medianoche #lg-s stop:nth-child(3) { stop-color: #16233f; }
 html.pkg-premium .eyebrow { display: flex; width: fit-content; }
+
+/* ==========================================================================
+   Modern layer (v16): floating glass navigation, larger display type,
+   pill eyebrows, cursor-lit cards, gradient figures, a deep footer and a
+   scroll progress line. Overrides only; every rule degrades gracefully.
+   ========================================================================== */
+/* Floating pill navigation over the content. */
+.site-header { padding: 8px 0 0; height: var(--header-h); background: transparent !important; box-shadow: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+.site-header .header-inner {
+  width: calc(100% - 20px); max-width: 1180px; padding-inline: 14px 6px; border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 62%, transparent); border: 1px solid color-mix(in srgb, var(--surface) 70%, transparent);
+  backdrop-filter: blur(22px) saturate(180%); -webkit-backdrop-filter: blur(22px) saturate(180%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 8px 30px -18px rgba(10, 30, 50, .35);
+  transition: background-color var(--t) var(--ease), box-shadow var(--t) var(--ease), border-color var(--t) var(--ease);
+}
+.site-header.is-scrolled .header-inner { background: color-mix(in srgb, var(--surface) 82%, transparent); border-color: var(--line); box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 16px 40px -20px rgba(10, 30, 50, .45); }
+.site-header .brand-logo, .site-header .brand-logo img { height: 36px; }
+@media (min-width: 1080px) { .site-header .brand-logo, .site-header .brand-logo img { height: 40px; } }
+.site-header .header-actions .btn, .site-header .header-actions .pill { min-height: 40px; }
+@media (prefers-reduced-transparency: reduce) { .site-header .header-inner { background: var(--surface); backdrop-filter: none; -webkit-backdrop-filter: none; } }
+html.a11y-contrast .site-header .header-inner { background: #fff; border-color: #000; backdrop-filter: none; }
+
+/* Hero: a fine grid and grain over the soft gradient, tighter display type. */
+.hero-bg::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(color-mix(in srgb, var(--indigo) 7%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--indigo) 7%, transparent) 1px, transparent 1px); background-size: 56px 56px; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 30% 20%, #000 20%, transparent 75%); mask-image: radial-gradient(ellipse 70% 60% at 30% 20%, #000 20%, transparent 75%); }
+.hero-bg::after { content: ""; position: absolute; inset: 0; opacity: .35; mix-blend-mode: soft-light; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E"); }
+.hero h1 { font-size: clamp(2.5rem, 6.8vw + .2rem, 5rem); letter-spacing: -.045em; line-height: .98; font-weight: 750; }
+.hero .lead { color: var(--text-2); max-width: 54ch; }
+.status-chip { background: color-mix(in srgb, var(--surface) 75%, transparent); }
+
+/* Section heads: pill eyebrow, bigger and tighter headings. */
+html:not(.pkg-premium) .section .eyebrow, html:not(.pkg-premium) .hero .eyebrow { display: flex; width: fit-content; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: color-mix(in srgb, var(--royal) 9%, transparent); border: 1px solid color-mix(in srgb, var(--royal) 16%, transparent); color: var(--royal); font-size: .75rem; letter-spacing: .08em; }
+html:not(.pkg-premium) .section .eyebrow::before, html:not(.pkg-premium) .hero .eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.section-head h2, .section h2 { font-size: clamp(2rem, 3.8vw + .6rem, 3.4rem); letter-spacing: -.04em; line-height: 1.02; font-weight: 750; }
+.section-head .lead { font-size: 1.125rem; }
+
+/* Cards: softer radius, layered shadow, a light that follows the pointer. */
+:root { --radius: 24px; --radius-lg: 32px; }
+.service-card, .card, .mv-card, .ins-card, .review-card, .stat, .doctor-card, .pkg-card, .area-card { position: relative; }
+.service-card::after, .mv-card::after, .ins-card::after, .review-card::after, .stat::after, .doctor-card::after, .pkg-card::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; z-index: 1;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--royal) 12%, transparent), transparent 60%);
+  transition: opacity 400ms var(--ease-out);
+}
+.service-card:hover::after, .mv-card:hover::after, .ins-card:hover::after, .review-card:hover::after, .stat:hover::after, .doctor-card:hover::after, .pkg-card:hover::after { opacity: 1; }
+.service-card:hover, .review-card:hover, .doctor-card:hover, .mv-card:hover { box-shadow: 0 0 0 1px color-mix(in srgb, var(--royal) 22%, transparent), var(--shadow-lg); }
+.service-icon { border-radius: 14px; background: linear-gradient(145deg, var(--tile-bg), color-mix(in srgb, var(--tile-bg) 60%, #fff)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), 0 6px 16px -10px color-mix(in srgb, var(--royal) 60%, transparent); }
+
+/* Figures read as gradient numerals. */
+.stat-value { background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: clamp(2.2rem, 4.4vw, 3.2rem); }
+html.a11y-contrast .stat-value { background: none; color: #000; }
+
+/* Buttons: a gradient fill with a lit top edge. */
+.btn-primary { background: var(--grad-brand); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 12px 26px -12px color-mix(in srgb, var(--royal) 75%, transparent); }
+.btn-primary:hover { background: var(--grad-brand); filter: brightness(1.08); }
+.btn-ghost, .btn-glass { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .7), 0 6px 18px -12px rgba(10, 30, 50, .35); }
+html.a11y-contrast .btn-primary { background: #000; filter: none; }
+
+/* Deep footer in the palette's darkest tone. */
+.site-footer { position: relative; overflow: hidden; isolation: isolate; border-top: 0; color: rgba(255, 255, 255, .72); background: linear-gradient(180deg, var(--indigo-strong), color-mix(in srgb, var(--indigo-strong) 80%, #000)); }
+.site-footer::before { content: ""; position: absolute; z-index: -1; width: 70vmax; height: 40vmax; left: 50%; top: -22vmax; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, color-mix(in srgb, var(--royal) 55%, transparent), transparent); opacity: .55; }
+.site-footer a, .site-footer .footer-bottom a { color: #fff; }
+.site-footer ul a { opacity: .8; transition: opacity var(--t) var(--ease); }
+.site-footer ul a:hover { opacity: 1; }
+.site-footer .footer-h { color: rgba(255, 255, 255, .5); }
+.site-footer .footer-bottom { border-top-color: rgba(255, 255, 255, .12); color: rgba(255, 255, 255, .55); }
+.site-footer .brand-light .brand-name { color: #fff; }
+.site-footer .brand-light .brand-tag { color: rgba(255, 255, 255, .6); }
+.site-footer .social a { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .14); color: #fff; }
+.site-footer :focus-visible { outline-color: #fff; }
+html.a11y-contrast .site-footer { background: #fff; color: #000; }
+html.a11y-contrast .site-footer::before { display: none; }
+html.a11y-contrast .site-footer a, html.a11y-contrast .site-footer .footer-h, html.a11y-contrast .site-footer .brand-light .brand-name, html.a11y-contrast .site-footer .footer-bottom { color: #000; }
+
+/* Scroll progress line (Profesional and Premium), CSS only where supported. */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    html.pkg-profesional body::before, html.pkg-premium body::before {
+      content: ""; position: fixed; left: 0; top: 0; z-index: 120; width: 100%; height: 3px; transform-origin: 0 50%; transform: scaleX(0);
+      background: var(--grad-wing); animation: lumen-progress linear both; animation-timeline: scroll(root);
+    }
+  }
+}
+@keyframes lumen-progress { to { transform: scaleX(1); } }
