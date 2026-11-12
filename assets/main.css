@@ -1324,3 +1324,10 @@ html.a11y-contrast .site-footer a, html.a11y-contrast .site-footer .footer-h, ht
   }
 }
 @keyframes lumen-progress { to { transform: scaleX(1); } }
+
+/* Demo hub link (demo installations and static demo copies). */
+.demo-banner .demo-hub { margin-right: 10px; padding-right: 12px; border-right: 1px solid rgba(255, 255, 255, .3); text-decoration: none; white-space: nowrap; }
+.demo-banner .demo-hub:hover { text-decoration: underline; }
+.demo-banner.demo-live { justify-content: flex-start; }
+.demo-banner.demo-live p { width: min(1180px, 100%); margin: 0 auto; text-align: left; }
+@media (max-width: 559px) { .demo-banner.demo-live .demo-note { display: none; } .demo-banner .demo-hub { border-right: 0; padding-right: 0; } }

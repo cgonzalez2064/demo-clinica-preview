@@ -333,11 +333,19 @@ footer .wrap > p { margin: 0; padding-top: 24px; border-top: 1px solid var(--lin
 }
 @keyframes up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .tier.profesional { animation: none; } }
+.nav-back { display: inline-flex; align-items: center; gap: 4px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; font-size: .8125rem; font-weight: 600; text-decoration: none; white-space: nowrap; background: rgba(127, 127, 127, .16); transition: background-color .3s, transform .2s var(--ease); }
+.nav-back:hover { background: rgba(127, 127, 127, .26); }
+.nav-back:active { transform: scale(.96); }
+.nav-back svg { width: 14px; height: 14px; flex: none; }
+.nav-back .nb-short { display: none; }
+@media (max-width: 719px) { .nav-back .nb-long { display: none; } .nav-back .nb-short { display: inline; } }
+@media (max-width: 419px) { .nav .mark span { display: none; } }
 @media (prefers-reduced-transparency: reduce) { .nav { background: var(--night-2); } .nav.light { background: #fff; } }
 </style>
 </head>
 <body>
 <nav class="nav" id="nav" aria-label="Principal">
+  <a class="nav-back" href="https://demo.teradevsgt.com/"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="nb-long">Todas las demos</span><span class="nb-short">Demos</span></a>
   <a class="mark" href="#top"><img src="assets/favicon.svg" alt="" width="28" height="28"><span>Sitios para clínicas</span></a>
   <div class="nav-links"><a href="#paquetes">Paquetes</a><a href="#tiempos">Tiempos</a><a href="#comparar">Comparar</a><a href="#planes">Planes</a><a href="#preguntas">Preguntas</a></div>
   <a class="nav-cta" href="https://wa.me/50256192730?text=Buen%20d%C3%ADa.%20Revis%C3%A9%20la%20demostraci%C3%B3n%20de%20sitios%20web%20para%20cl%C3%ADnicas%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20para%20elegir%20un%20paquete." target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
